@@ -11,7 +11,7 @@
             --color-medium-dark: #024959;
             --color-medium: #026773;
             --color-light: #3CA6A6;
-            --color-gold: #D4AF37;
+            --color-gold: #19766b;
         }
         
         * {
@@ -128,15 +128,13 @@
             font-size: 1.1rem;
             padding: 1rem 2.5rem;
             background-color: var(--color-gold);
-            color: var(--color-dark);
+            color: #fff;
             text-transform: uppercase;
             letter-spacing: 1px;
             transition: all 0.3s ease;
         }
 
         .banner .btn:hover {
-            background-color: #fff;
-            color: var(--color-dark);
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
@@ -144,7 +142,7 @@
         .btn {
             display: inline-block;
             background-color: var(--color-gold);
-            color: var(--color-dark);
+            color: white;
             padding: 1rem 2.5rem;
             text-decoration: none;
             border-radius: 50px;
@@ -154,9 +152,7 @@
             letter-spacing: 1px;
         }
 
-        .btn:hover {
-            background-color: #fff;
-            color: var(--color-dark);
+        .btn:hover, .btn:active {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
@@ -337,7 +333,7 @@
             top: 50%;
             transform: translateY(-50%);
             background-color: var(--color-gold);
-            color: var(--color-dark);
+            color: #fff;
             border: none;
             padding: 1rem;
             cursor: pointer;
@@ -346,8 +342,7 @@
         }
 
         .carousel-btn:hover {
-            background-color: var(--color-medium);
-            color: #fff;
+            transform: translateY(-50%) scale(1.1);
         }
 
         .carousel-btn-left {
@@ -435,19 +430,21 @@
 
         .testimonial-contact {
             display: flex;
-            padding: 6rem 0;
+            /* padding: ; */
             background-color: #f9f9f9;
+            min-height: 100vh;
         }
 
         .testimonial-section, .contact-section {
             flex: 1;
-            padding: 2rem;
-        }
-
-        .testimonial-section {
+            padding: 5rem;
             display: flex;
             flex-direction: column;
             justify-content: center;
+            height: 100vh;
+        }
+
+        .testimonial-section {
             background-color: var(--color-medium);
             color: #fff;
         }
@@ -459,8 +456,8 @@
         .testimonial-slide {
             max-width: 800px;
             margin: auto;
-            font-size: 1.2rem;
-            line-height: 1.8;
+            font-size: 1.1rem;
+            line-height: 1.6;
         }
 
         .testimonial-slide p:first-child {
@@ -470,50 +467,52 @@
 
         .form-subtitle {
             text-align: center;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
             color: var(--color-medium-dark);
+            font-size: 0.9rem;
         }
 
         .form-row {
-            display: grid;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
         }
 
         .form-group {
             display: flex;
             flex-direction: column;
-            gap: 0.5rem;
+            gap: 0.3rem;
+            flex: 1;
         }
 
         .checkbox-group {
             display: grid;
-            gap: 0.5rem;
+            gap: 0.3rem;
         }
 
         .checkbox-item {
             display: flex;
             align-items: center;
-            gap: 0.5rem;
+            gap: 0.3rem;
         }
 
         .checkbox-item input[type="checkbox"] {
             width: auto;
-            margin-right: 0.5rem;
+            margin-right: 0.3rem;
         }
 
         select {
             background-repeat: no-repeat;
-            padding-right: 2.5rem;
+            padding-right: 2rem;
         }
 
         button {
-            margin-top: 1.5rem;
+            margin-top:  1rem;
         }
 
         input, textarea, select {
             width: 100%;
-            padding: 0.75rem;
+            padding: 0.6rem;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-family: 'Lato', sans-serif;
@@ -521,7 +520,9 @@
             transition: all 0.3s ease;
         }
 
-        input:focus, textarea:focus, select:focus {
+        input:focus, 
+        textarea:focus,
+        select:focus {
             outline: none;
             border-color: var(--color-medium);
             box-shadow: 0 0 0 2px rgba(2, 103, 115, 0.2);
@@ -529,8 +530,8 @@
 
         button {
             background-color: var(--color-gold);
-            color: var(--color-dark);
-            padding: 1rem 2rem;
+            color: #fff;
+            padding: 0.8rem 1.5rem;
             border: none;
             border-radius: 50px;
             cursor: pointer;
@@ -540,9 +541,7 @@
             letter-spacing: 1px;
         }
 
-        button:hover {
-            background-color: var(--color-medium);
-            color: #fff;
+        button:hover, button:active {
             transform: translateY(-3px);
             box-shadow: 0 10px 20px rgba(0,0,0,0.2);
         }
@@ -551,7 +550,6 @@
             padding: 6rem 0;
             background-color: #fff;
             text-align: center;
-            margin-bottom: 4rem;
         }
 
         .lorem-ipsum p {
@@ -617,7 +615,7 @@
             }
 
             .form-row {
-                grid-template-columns: 1fr;
+                flex-direction: column;
             }
         }
     </style>
@@ -670,32 +668,21 @@
         </div>
     </section>
 
-    <section class="questions">
+    <section class="counter">
         <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="card" id="questionCard">
-                <h3>Question</h3>
-                <p>Answer</p>
+            <h2 class="section-title" style="color: #fff;">Our Impact</h2>
+            <div style="display: flex; justify-content: space-around; margin-top: 2rem;">
+                <div>
+                    <div class="counter-item" id="studentCount">0</div>
+                    <p>Students Guided</p>
+                </div>
+                <div>
+                    <div class="counter-item" id="cityCount">0</div>
+                    <p>French Cities Covered</p>
+                </div>
             </div>
-            <button onclick="changeQuestion()">Next Question</button>
         </div>
     </section>
-
-    <div class="scrolling-banner-container">
-        <div class="scrolling-banner">
-            <div class="scroll-banner-content">
-                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp;
-                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp;
-                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp; 
-            </div>
-            <div class="scroll-banner-content">
-                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp;
-                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp;
-                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp; 
-            </div>
-        </div>
-    </div>
-
     <div class="carousel-container">
         <div class="carousel">
             <div class="carousel-slide">
@@ -724,45 +711,29 @@
         <button class="carousel-btn carousel-btn-right">&gt;</button>
     </div>
 
-    <section class="counter">
-        <div class="container">
-            <h2 class="section-title" style="color: #fff;">Our Impact</h2>
-            <div style="display: flex; justify-content: space-around; margin-top: 2rem;">
-                <div>
-                    <div class="counter-item" id="studentCount">0</div>
-                    <p>Students Guided</p>
-                </div>
-                <div>
-                    <div class="counter-item" id="cityCount">0</div>
-                    <p>French Cities Covered</p>
-                </div>
+    <div class="scrolling-banner-container">
+        <div class="scrolling-banner">
+            <div class="scroll-banner-content">
+                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp;
+                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp;
+                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp; 
+            </div>
+            <div class="scroll-banner-content">
+                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp;
+                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp;
+                Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp; 
             </div>
         </div>
-    </section>
+    </div>
 
-    <section class="slider">
+    <section class="lorem-ipsum">
         <div class="container">
-            <h2 class="section-title">Why Choose Us</h2>
-            <div id="slider" style="margin-top: 2rem;">
-                <div class="slide">Unparalleled Expertise</div>
-            </div>
+            <h2 class="section-title">Lorem Ipsum</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
+            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         </div>
     </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Exclusive Services</h2>
-            <ul>
-                <li>Bespoke Visa Application Assistance</li>
-                <li>Elite University Admissions Support</li>
-                <li>Luxury Accommodation Arrangements</li>
-                <li>Personalized Cultural Integration Programs</li>
-                <li>One-on-One Language Coaching</li>
-                <li>Strategic Career Development Planning</li>
-            </ul>
-        </div>
-    </section>  
-
+    
     <section class="testimonial-contact">
         <div class="testimonial-section">
             <h2 class="section-title" style="color: #fff;">Client Testimonials</h2>
@@ -774,29 +745,32 @@
             </div>
         </div>
         <div class="contact-section">
-            <h2 class="section-title">Tell us what you need!
-            </h2>
-            <p class="form-subtitle">We’ll reach out to you with seamless solutions and virtual high-fives! Not spam.</p>
+            <h2 class="section-title">Tell us what you need!</h2>
+            <p class="form-subtitle">We'll reach out to you with seamless solutions and virtual high-fives! Not spam.</p>
             <form id="contactForm">
-                <div class="form-group">
-                    <label for="name">Name:</label>
-                    <input type="text" id="name" name="name" required>
-                </div>
-                <div class="form-group">
-                    <label for="phone">Phone number:</label>
-                    <input type="tel" id="phone" name="phone" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">Phone number:</label>
+                        <input type="tel" id="phone" name="phone" required>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="email">Email:</label>
                     <input type="email" id="email" name="email" required>
                 </div>
-                <div class="form-group">
-                    <label for="comingFrom">Coming from:</label>
-                    <input type="text" id="comingFrom" name="comingFrom" placeholder="City In India" required>
-                </div>
-                <div class="form-group">
-                    <label for="goingTo">Going to:</label>
-                    <input type="text" id="goingTo" name="goingTo" placeholder="City In France" required>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="comingFrom">Coming from:</label>
+                        <input type="text" id="comingFrom" name="comingFrom" placeholder="City In India" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="goingTo">Going to:</label>
+                        <input type="text" id="goingTo" name="goingTo" placeholder="City In France" required>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label>Services needed:</label>
@@ -831,14 +805,6 @@
                 </div>
                 <button type="submit">Get in Touch</button>
             </form>
-        </div>
-    </section>
-
-    <section class="lorem-ipsum">
-        <div class="container">
-            <h2 class="section-title">Lorem Ipsum</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
         </div>
     </section>
 
@@ -882,21 +848,7 @@
         observer.observe(document.querySelector('.counter'));
 
         // Question card
-        const questions = [
-            { q: "What visa do I need for studying in France?", a: "Most students require a long-stay student visa. Our expert consultants will guide you through the specific requirements tailored to your program duration and type, ensuring a smooth application process." },
-            { q: "How much does it cost to study in France?", a: "Costs vary depending on the institution and location. We provide comprehensive financial planning, including detailed cost breakdowns, scholarship opportunities, and strategies to optimize your budget for a comfortable stay in France." },
-            { q: "Do I need to know French to study in France?", a: "While knowing French is beneficial, many programs, especially at the graduate level, are offered in English. We offer personalized language preparation programs and can help you find suitable courses that match your language proficiency." }
-        ];
-
-        let currentQuestion = 0;
-
-        function changeQuestion() {
-            currentQuestion = (currentQuestion + 1) % questions.length;
-            const card = document.getElementById('questionCard');
-            card.innerHTML = `<h3>${questions[currentQuestion].q}</h3><p>${questions[currentQuestion].q}</p>`;
-        }
-
-        changeQuestion();
+        
 
         // Slider
         const sliderContent = [
@@ -1005,5 +957,6 @@
             this.reset();
         });
     </script>
+
 </body>
 </html>
