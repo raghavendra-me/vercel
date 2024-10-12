@@ -108,6 +108,8 @@
             display: flex;
             flex-direction: column;
             position: relative;
+            height: 200px;
+            overflow: hidden;
         }
 
         .service-card:hover {
@@ -132,7 +134,8 @@
 
         .service-card.active {
             height: auto;
-            aspect-ratio: auto;
+            max-height: 1000px;
+            transition: max-height 0.3s ease;
         }
 
 
@@ -255,6 +258,9 @@
             font-size: 20px;
             color: var(--color-medium);
             transition: transform 0.3s ease;
+            background-color: #fff;
+            padding: 5px;
+            border-radius: 50%;
         }
 
         .service-card.active .down-arrow {
@@ -424,20 +430,10 @@
                 card.addEventListener('click', function() {
                     this.classList.toggle('active');
                     
-                    // Adjust the height of the clicked card
-                    if (this.classList.contains('active')) {
-                        this.style.height = 'auto';
-                        let height = this.offsetHeight;
-                        this.style.height = height + 'px';
-                    } else {
-                        this.style.height = '';
-                    }
-
-                    // Remove active class and reset height for other cards
+                    // Remove active class from other cards
                     serviceCards.forEach(c => {
                         if (c !== this) {
                             c.classList.remove('active');
-                            c.style.height = '';
                         }
                     });
                 });
