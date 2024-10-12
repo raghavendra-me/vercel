@@ -36,7 +36,7 @@
         header {
             background-color: var(--color-dark);
             color: #fff;
-            padding:  0;
+            padding: 0;
             position: fixed;
             width: 100%;
             top: 0;
@@ -91,30 +91,50 @@
 
         .service-cards {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
             gap: 30px;
             margin-bottom: 40px;
+            align-items: start;
         }
 
         .service-card {
             background-color: #fff;
             border: 1px solid #ddd;
             border-radius: 10px;
-            padding: 25px;
+            padding: 20px;
             cursor: pointer;
             transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            position: relative;
         }
 
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+        }
+
+        .service-card .card-content {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .service-card .card-details {
+            display: none;
+            padding-top: 15px;
+        }
+
+        .service-card.active .card-details {
+            display: block;
         }
 
         .service-card.active {
-            background-color: var(--color-light);
-            color: #fff;
+            height: auto;
+            aspect-ratio: auto;
         }
+
 
         .service-card h3 {
             margin-bottom: 15px;
@@ -125,29 +145,12 @@
         .service-card p {
             font-size: 0.9em;
             margin-bottom: 15px;
+            flex-grow: 1;
         }
 
-        .service-card .arrow {
-            float: right;
-            transition: transform 0.3s ease;
-        }
-
-        .service-card.active .arrow {
-            transform: rotate(180deg);
-        }
 
         .detailed-view {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
             display: none;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-
-        .detailed-view.active {
-            display: block;
         }
 
         .cta-button {
@@ -170,25 +173,54 @@
 
         .faq-section {
             margin-bottom: 60px;
+            background-color: var(--color-medium-dark);
+            color: #fff;
+            padding: 40px;
+            border-radius: 10px;
         }
 
         .faq-list {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
         }
 
         .faq-item {
-            background-color: #fff;
-            border: 1px solid #ddd;
-            border-radius: 10px;
-            padding: 25px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            background-color: var(--color-dark);
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
         }
 
-        .faq-item h3 {
-            margin-bottom: 15px;
+        .faq-question {
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: var(--color-medium);
+        }
+
+        .faq-answer {
+            background-color: #fff;
             color: var(--color-medium-dark);
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 1000px;
+        }
+
+        .faq-icon {
+            transition: transform 0.3s ease;
+        }
+
+        .faq-item.active .faq-icon {
+            transform: rotate(45deg);
         }
 
         .cta-section {
@@ -210,6 +242,23 @@
         .cta-button-large {
             font-size: 1.2em;
             padding: 15px 35px;
+        }
+
+        .faq-section .section-title {
+            color: #fff;
+        }
+
+        .down-arrow {
+            position: absolute;
+            bottom: 10px;
+            right: 10px;
+            font-size: 20px;
+            color: var(--color-medium);
+            transition: transform 0.3s ease;
+        }
+
+        .service-card.active .down-arrow {
+            transform: rotate(180deg);
         }
 
         @media (max-width: 768px) {
@@ -246,71 +295,71 @@
                 <h2 class="section-title">Our Services</h2>
                 <div class="service-cards">
                     <div class="service-card" data-service="service1">
-                        <h3>Visa Assistance</h3>
-                        <p>Expert guidance for your French visa application process.</p>
-                        <span class="arrow">▼</span>
+                        <div class="card-content">
+                            <h3>Visa Assistance</h3>
+                            <p>Expert guidance for your French visa application process.</p>
+                            <div class="card-details">
+                                <p>Our expert team provides comprehensive visa assistance for Indians looking to study, work, or travel to France. We guide you through the entire process, from document preparation to application submission.</p>
+                                <a href="#" class="cta-button">Know More</a>
+                            </div>
+                        </div>
+                        <span class="down-arrow">▼</span>
                     </div>
                     <div class="service-card" data-service="service2">
-                        <h3>Study Abroad Counseling</h3>
-                        <p>Personalized advice for your academic journey in France.</p>
-                        <span class="arrow">▼</span>
+                        <div class="card-content">
+                            <h3>Study Abroad Counseling</h3>
+                            <p>Personalized advice for your academic journey in France.</p>
+                            <div class="card-details">
+                                <p>We offer personalized counseling services to help Indian students navigate the French education system. Our counselors assist in choosing the right programs and universities, increasing your chances of admission.</p>
+                                <a href="#" class="cta-button">Know More</a>
+                            </div>
+                        </div>
+                        <span class="down-arrow">▼</span>
                     </div>
                     <div class="service-card" data-service="service3">
-                        <h3>Language Courses</h3>
-                        <p>Intensive French language programs for all levels.</p>
-                        <span class="arrow">▼</span>
+                        <div class="card-content">
+                            <h3>Language Courses</h3>
+                            <p>Intensive French language programs for all levels.</p>
+                            <div class="card-details">
+                                <p>Master the French language with our intensive courses designed specifically for Indian students and professionals. Our experienced instructors use modern teaching methods to help you achieve fluency quickly.</p>
+                                <a href="#" class="cta-button">Know More</a>
+                            </div>
+                        </div>
+                        <span class="down-arrow">▼</span>
                     </div>
                     <div class="service-card" data-service="service4">
-                        <h3>Job Placement</h3>
-                        <p>Connect with top French employers in your field.</p>
-                        <span class="arrow">▼</span>
+                        <div class="card-content">
+                            <h3>Job Placement</h3>
+                            <p>Connect with top French employers in your field.</p>
+                            <div class="card-details">
+                                <p>Our job placement services connect Indian talent with French employers. We provide resume building, interview preparation, and networking opportunities to help you land your dream job in France.</p>
+                                <a href="#" class="cta-button">Know More</a>
+                            </div>
+                        </div>
+                        <span class="down-arrow">▼</span>
                     </div>
                     <div class="service-card" data-service="service5">
-                        <h3>Cultural Integration</h3>
-                        <p>Programs to help you adapt to French life and customs.</p>
-                        <span class="arrow">▼</span>
+                        <div class="card-content">
+                            <h3>Cultural Integration</h3>
+                            <p>Programs to help you adapt to French life and customs.</p>
+                            <div class="card-details">
+                                <p>Ease your transition into French society with our cultural integration programs. We offer workshops, events, and resources to help you understand French customs, etiquette, and lifestyle.</p>
+                                <a href="#" class="cta-button">Know More</a>
+                            </div>
+                        </div>
+                        <span class="down-arrow">▼</span>
                     </div>
                     <div class="service-card" data-service="service6">
-                        <h3>Travel Assistance</h3>
-                        <p>Comprehensive support for your relocation to France.</p>
-                        <span class="arrow">▼</span>
+                        <div class="card-content">
+                            <h3>Travel Assistance</h3>
+                            <p>Comprehensive support for your relocation to France.</p>
+                            <div class="card-details">
+                                <p>Plan your journey from India to France with our comprehensive travel assistance. We help with flight bookings, accommodation arrangements, and provide essential information about living in France.</p>
+                                <a href="#" class="cta-button">Know More</a>
+                            </div>
+                        </div>
+                        <span class="down-arrow">▼</span>
                     </div>
-                </div>
-
-                <div class="detailed-view" id="service1">
-                    <h2>Visa Assistance</h2>
-                    <p>Our expert team provides comprehensive visa assistance for Indians looking to study, work, or travel to France. We guide you through the entire process, from document preparation to application submission.</p>
-                    <a href="#" class="cta-button">Know More</a>
-                </div>
-
-                <div class="detailed-view" id="service2">
-                    <h2>Study Abroad Counseling</h2>
-                    <p>We offer personalized counseling services to help Indian students navigate the French education system. Our counselors assist in choosing the right programs and universities, increasing your chances of admission.</p>
-                    <a href="#" class="cta-button">Know More</a>
-                </div>
-
-                <div class="detailed-view" id="service3">
-                    <h2>Language Courses</h2>
-                    <p>Master the French language with our intensive courses designed specifically for Indian students and professionals. Our experienced instructors use modern teaching methods to help you achieve fluency quickly.</p>
-                    <a href="#" class="cta-button">Know More</a>
-                </div>
-
-                <div class="detailed-view" id="service4">
-                    <h2>Job Placement</h2>
-                    <p>Our job placement services connect Indian talent with French employers. We provide resume building, interview preparation, and networking opportunities to help you land your dream job in France.</p>
-                    <a href="#" class="cta-button">Know More</a>
-                </div>
-
-                <div class="detailed-view" id="service5">
-                    <h2>Cultural Integration</h2>
-                    <p>Ease your transition into French society with our cultural integration programs. We offer workshops, events, and resources to help you understand French customs, etiquette, and lifestyle.</p>
-                    <a href="#" class="cta-button">Know More</a>
-                </div>
-
-                <div class="detailed-view" id="service6">
-                    <h2>Travel Assistance</h2>
-                    <p>Plan your journey from India to France with our comprehensive travel assistance. We help with flight bookings, accommodation arrangements, and provide essential information about living in France.</p>
-                    <a href="#" class="cta-button">Know More</a>
                 </div>
             </section>
 
@@ -318,20 +367,40 @@
                 <h2 class="section-title">Frequently Asked Questions</h2>
                 <div class="faq-list">
                     <div class="faq-item">
-                        <h3>What are the visa requirements for Indian students?</h3>
-                        <p>Indian students need a long-stay visa for studies, acceptance letter, proof of finances, and health insurance.</p>
+                        <div class="faq-question">
+                            <span>What are the visa requirements for Indian students?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Indian students need a long-stay visa for studies, acceptance letter, proof of finances, and health insurance.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <h3>How long does it take to learn French?</h3>
-                        <p>Most students reach B2 level in 6-12 months with intensive study.</p>
+                        <div class="faq-question">
+                            <span>How long does it take to learn French?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Most students reach B2 level in 6-12 months with intensive study.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <h3>Are there job opportunities for Indians in France?</h3>
-                        <p>Yes, especially in IT, engineering, and research. French language skills are often required.</p>
+                        <div class="faq-question">
+                            <span>Are there job opportunities for Indians in France?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, especially in IT, engineering, and research. French language skills are often required.</p>
+                        </div>
                     </div>
                     <div class="faq-item">
-                        <h3>What's the cost of living for Indian students?</h3>
-                        <p>Budget 600-800 euros monthly in smaller cities, 800-1000 euros in Paris.</p>
+                        <div class="faq-question">
+                            <span>What's the cost of living for Indian students?</span>
+                            <span class="faq-icon">+</span>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Budget 600-800 euros monthly in smaller cities, 800-1000 euros in Paris.</p>
+                        </div>
                     </div>
                 </div>
             </section>
@@ -349,28 +418,34 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const serviceCards = document.querySelectorAll('.service-card');
-            const detailedViews = document.querySelectorAll('.detailed-view');
+            const faqItems = document.querySelectorAll('.faq-item');
 
             serviceCards.forEach(card => {
                 card.addEventListener('click', function() {
-                    const service = this.getAttribute('data-service');
-                    const correspondingView = document.getElementById(service);
-                    
-                    // Toggle active class on clicked card
                     this.classList.toggle('active');
-
-                    // Toggle corresponding detailed view
-                    if (correspondingView.classList.contains('active')) {
-                        correspondingView.classList.remove('active');
+                    
+                    // Adjust the height of the clicked card
+                    if (this.classList.contains('active')) {
+                        this.style.height = 'auto';
+                        let height = this.offsetHeight;
+                        this.style.height = height + 'px';
                     } else {
-                        detailedViews.forEach(view => view.classList.remove('active'));
-                        correspondingView.classList.add('active');
+                        this.style.height = '';
                     }
 
-                    // Remove active class from other cards
+                    // Remove active class and reset height for other cards
                     serviceCards.forEach(c => {
-                        if (c !== this) c.classList.remove('active');
+                        if (c !== this) {
+                            c.classList.remove('active');
+                            c.style.height = '';
+                        }
                     });
+                });
+            });
+
+            faqItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    this.classList.toggle('active');
                 });
             });
         });
