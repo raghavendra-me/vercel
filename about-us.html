@@ -3,15 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Elite India to France Consultancy</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>About Us - I2F Services</title>
     <style>
         :root {
             --color-dark: #012e40;
             --color-medium-dark: #024959;
             --color-medium: #026773;
             --color-light: #3CA6A6;
-            --color-gold: #D4AF37;
+            --color-gold: #19766b;
         }
         
         * {
@@ -21,7 +20,7 @@
         }
 
         body {
-            font-family: 'Lato', sans-serif;
+            font-family: 'Arial', sans-serif;
             line-height: 1.6;
             color: #333;
             background-color: #f9f9f9;
@@ -31,21 +30,17 @@
             width: 90%;
             max-width: 1200px;
             margin: auto;
-            overflow: hidden;
+            padding: 20px;
         }
 
         header {
-            background-color: rgba(1, 46, 64, 0.95);
+            background-color: var(--color-dark);
             color: #fff;
-            padding: 1rem 0;
+            padding: 0;
             position: fixed;
             width: 100%;
+            top: 0;
             z-index: 1000;
-            transition: all 0.3s ease;
-        }
-
-        header.scrolled {
-            background-color: rgba(1, 46, 64, 1);
             box-shadow: 0 2px 10px rgba(0,0,0,0.1);
         }
 
@@ -53,13 +48,12 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 1rem;
         }
 
         .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
+            font-size: 1.5em;
+            font-weight: bold;
         }
 
         nav ul {
@@ -68,798 +62,149 @@
         }
 
         nav ul li {
-            padding: 0 1rem;
+            margin-left: 20px;
         }
 
-        nav a {
+        nav ul li a {
             color: #fff;
             text-decoration: none;
-            font-weight: 300;
             transition: color 0.3s ease;
         }
 
-        nav a:hover {
+        nav ul li a:hover {
             color: var(--color-gold);
         }
 
-        .banner {
-            background: linear-gradient(rgba(1, 46, 64, 0.5), rgba(2, 73, 89, 0.5)), url('https://www.frenchclass.in/wp-content/uploads/2024/01/cities-in-france-paris-laforet.webp');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
-            color: #fff;
-            text-align: center;
-            padding: 12rem 0 8rem;
-            position: relative;
-        }
-
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle, rgba(1, 46, 64, 0.3) 0%, rgba(1, 46, 64, 0.6) 100%);
-        }
-
-        .banner-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .banner h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            letter-spacing: 2px;
-        }
-
-        .banner p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--color-gold);
-            color: var(--color-dark);
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn:hover {
-            background-color: #fff;
-            color: var(--color-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        .main-content {
+            margin-top: 80px;
+            padding: 2rem 0;
         }
 
         .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--color-dark);
+            font-size: 2.5em;
+            color: var(--color-medium-dark);
+            margin-bottom: 1rem;
+            text-align: center;
+        }
+
+        .about-intro {
             text-align: center;
             margin-bottom: 2rem;
-            position: relative;
         }
 
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: var(--color-gold);
-            margin: 1rem auto 0;
-        }
-
-        .questions {
-            background-color: #fff;
-            padding: 6rem 0;
-            position: relative;
-        }
-
-        .card {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .scrolling-banner-container {
-            width: 100%;
-            overflow: hidden;
-            background-color: #f0f0f0;
-            padding: 10px 0;
-        }
-
-        .scrolling-banner {
+        .team-members {
             display: flex;
-            white-space: nowrap;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
         }
 
-        .scroll-banner-content {
+        .team-member {
+            width: 45%;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .team-member img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 1rem;
+        }
+
+        .quote-section {
+            background-color: var(--color-light);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+            font-style: italic;
+            font-size: 1.2em;
+            margin-bottom: 2rem;
+        }
+
+        .cta-section {
+            background-color: var(--color-medium);
+            color: #fff;
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .cta-button {
             display: inline-block;
-            padding-right: 50px;
-            animation: scroll 5s linear infinite;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        .carousel-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 2rem auto;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-slide {
-            flex: 0 0 100%;
-            display: flex;
-            padding: 2rem;
-        }
-
-        .carousel-image {
-            flex: 0 0 50%;
-            height: 400px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .carousel-content {
-            flex: 0 0 50%;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .carousel-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--color-dark);
-            margin-bottom: 1rem;
-        }
-
-        .carousel-text {
-            font-size: 1.1rem;
-            color: var(--color-medium-dark);
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
             background-color: var(--color-gold);
-            color: var(--color-dark);
-            border: none;
-            padding: 1rem;
-            cursor: pointer;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-btn:hover {
-            background-color: var(--color-medium);
             color: #fff;
-        }
-
-        .carousel-btn-left {
-            left: 1rem;
-        }
-
-        .carousel-btn-right {
-            right: 1rem;
-        }
-
-        .counter {
-            background-color: var(--color-medium-dark);
-            color: #fff;
-            padding: 6rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .counter::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-        }
-
-        .counter-item {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .slider {
-            background-color: #fff;
-            padding: 6rem 0;
-            text-align: center;
-            position: relative;
-        }
-
-        .slide {
-            font-size: 1.5rem;
-            font-style: italic;
-            color: var(--color-medium);
-        }
-
-        .services {
-            padding: 6rem 0;
-            background-color: #f9f9f9;
-            position: relative;
-        }
-
-        .services ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .services li {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
-            text-align: center;
-        }
-
-        .services li:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .services li::before {
-            content: '✦';
-            display: block;
-            font-size: 2rem;
-            color: var(--color-gold);
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-contact {
-            display: flex;
-            justify-content: space-between;
-            gap: 2rem;
-            padding: 6rem 0;
-            background-color: #fff;
-        }
-
-        .testimonial, .contact {
-            flex: 1;
-            padding: 2rem;
-            border-radius: 10px;
-        }
-
-        .testimonial {
-            background-color: var(--color-medium);
-            color: #fff;
-        }
-
-        .testimonial-slide {
-            font-size: 1.2rem;
-            line-height: 1.8;
-        }
-
-        .testimonial-slide p:first-child {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .contact {
-            background-color: #f9f9f9;
-        }
-
-        form {
-            display: grid;
-            gap: 1.5rem;
-        }
-
-        .form-subtitle {
-            text-align: center;
-            margin-bottom: 2rem;
-            color: var(--color-medium-dark);
-        }
-
-        .form-row {
-            display: grid;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-        }
-
-        .checkbox-group {
-            display: grid;
-            gap: 0.5rem;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .checkbox-item input[type="checkbox"] {
-            width: auto;
-            margin-right: 0.5rem;
-        }
-
-        select {
-            background-repeat: no-repeat;
-            padding-right: 2.5rem;
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 1rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Lato', sans-serif;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, textarea:focus, select:focus {
-            outline: none;
-            border-color: var(--color-medium);
-            box-shadow: 0 0 0 2px rgba(2, 103, 115, 0.2);
-        }
-
-        button {
-            background-color: var(--color-gold);
-            color: var(--color-dark);
-            padding: 1rem 2rem;
-            border: none;
+            padding: 12px 25px;
+            text-decoration: none;
             border-radius: 50px;
-            cursor: pointer;
+            margin-top: 1rem;
             transition: all 0.3s ease;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-top: 1.5rem;
+            font-weight: bold;
         }
 
-        button:hover {
-            background-color: var(--color-medium);
-            color: #fff;
+        .cta-button:hover {
+            background-color: var(--color-medium-dark);
             transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
 
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .banner h1 {
-                font-size: 2.5rem;
-            }
-
-            .banner p {
-                font-size: 1rem;
-            }
-
-            .counter-item {
-                font-size: 2.5rem;
-            }
-
-            .services ul {
-                grid-template-columns: 1fr;
-            }
-
-            .carousel-slide {
+            .team-members {
                 flex-direction: column;
             }
 
-            .carousel-image,
-            .carousel-content {
-                flex: 0 0 100%;
-            }
-
-            .carousel-image {
-                height: 200px;
-            }
-
-            .carousel-content {
-                padding: 1rem;
-            }
-
-            .carousel-title {
-                font-size: 2rem;
-            }
-
-            .carousel-text {
-                font-size: 1rem;
-            }
-
-            .testimonial-contact {
-                flex-direction: column;
-            }
-
-            .form-row {
-                grid-template-columns: 1fr;
+            .team-member {
+                width: 100%;
             }
         }
     </style>
 </head>
 <body>
-    <header id="header">
-        <div class="container">
-            <nav>
-                <div class="logo">I2F Services</div>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#services">Services</a></li>
-                    <li><a href="#testimonial-contact">Testimonial & Contact</a></li>
-                </ul>
-            </nav>
-        </div>
+    <header>
+        <nav class="container">
+            <div class="logo">I2F Services</div>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">FAQ</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="home" class="banner">
+    <main class="main-content">
         <div class="container">
-            <div class="banner-content">
-                <h1>Your Exclusive Journey from India to France</h1>
-                <p>Experience a seamless transition with our bespoke guidance, tailored to elevate your academic and cultural journey in the heart of Europe</p>
-                <a href="#testimonial-contact" class="btn">Begin Your Journey</a>
+            <h1 class="section-title">About Us</h1>
+            
+            <div class="about-intro">
+                <p>At I2F Services, we specialize in helping individuals and families navigate the complex journey from India to France. Our team of experienced professionals understands the challenges of international relocation because we've been there ourselves. We're committed to making your transition as smooth as possible, offering personalized support every step of the way.</p>
             </div>
-        </div>
-    </section>
 
-    <section class="questions">
-        <div class="container">
-            <h2 class="section-title">Frequently Asked Questions</h2>
-            <div class="card" id="questionCard">
-                <h3>Question</h3>
-                <p>Answer</p>
-            </div>
-            <button onclick="changeQuestion()">Next Question</button>
-        </div>
-    </section>
-
-    <div class="scrolling-banner-container">
-        <div class="scrolling-banner">
-          <div class="scroll-banner-content">
-            Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp;
-          </div>
-          <div class="scroll-banner-content">
-            Post Arrival Queries &nbsp;&nbsp;&nbsp; Hostel Accommodation &nbsp;&nbsp;&nbsp; Security &nbsp;&nbsp;&nbsp;
-          </div>
-        </div>
-    </div>
-
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-slide">
-                <div class="carousel-image" style="background-image: url('https://picsum.photos/800/400?random=1');"></div>
-                <div class="carousel-content">
-                    <h2 class="carousel-title">Slide 1</h2>
-                    <p class="carousel-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <div class="team-members">
+                <div class="team-member">
+                    <img src="image01face.jpg" alt="Rajesh">
+                    <h2>Rajesh</h2>
+                    <p>Co-founder and Relocation Specialist</p>
+                    <p>With over 10 years of experience in international relocations, Rajesh brings a wealth of knowledge and a personal touch to every client's journey.</p>
+                </div>
+                <div class="team-member">
+                    <img src="image01face.jpg" alt="Shalini">
+                    <h2>Shalini</h2>
+                    <p>Co-founder and Cultural Integration Expert</p>
+                    <p>Shalini's expertise in cross-cultural communication and her firsthand experience of moving to France make her an invaluable asset to our clients' successful integration.</p>
                 </div>
             </div>
-            <div class="carousel-slide">
-                <div class="carousel-image" style="background-image: url('https://picsum.photos/800/400?random=2');"></div>
-                <div class="carousel-content">
-                    <h2 class="carousel-title">Slide 2</h2>
-                    <p class="carousel-text">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
+
+            <div class="quote-section">
+                <p>"Every client we get is a new friend, 'cause we've been there."</p>
             </div>
-            <div class="carousel-slide">
-                <div class="carousel-image" style="background-image: url('https://picsum.photos/800/400?random=3');"></div>
-                <div class="carousel-content">
-                    <h2 class="carousel-title">Slide 3</h2>
-                    <p class="carousel-text">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                </div>
+
+            <div class="cta-section">
+                <h2>Ready to Start Your Journey?</h2>
+                <p>Let us help you get from India to France with ease and confidence.</p>
+                <a href="#" class="cta-button">Contact Us Today</a>
             </div>
         </div>
-        <button class="carousel-btn carousel-btn-left">&lt;</button>
-        <button class="carousel-btn carousel-btn-right">&gt;</button>
-    </div>
-
-    <section class="counter">
-        <div class="container">
-            <h2 class="section-title" style="color: #fff;">Our Impact</h2>
-            <div style="display: flex; justify-content: space-around; margin-top: 2rem;">
-                <div>
-                    <div class="counter-item" id="studentCount">0</div>
-                    <p>Students Guided</p>
-                </div>
-                <div>
-                    <div class="counter-item" id="cityCount">0</div>
-                    <p>French Cities Covered</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="slider">
-        <div class="container">
-            <h2 class="section-title">Why Choose Us</h2>
-            <div id="slider" style="margin-top: 2rem;">
-                <div class="slide">Unparalleled Expertise</div>
-            </div>
-        </div>
-    </section>
-
-    <section id="services" class="services">
-        <div class="container">
-            <h2 class="section-title">Our Exclusive Services</h2>
-            <ul>
-                <li>Bespoke Visa Application Assistance</li>
-                <li>Elite University Admissions Support</li>
-                <li>Luxury Accommodation Arrangements</li>
-                <li>Personalized Cultural Integration Programs</li>
-                <li>One-on-One Language Coaching</li>
-                <li>Strategic Career Development Planning</li>
-            </ul>
-        </div>
-    </section>
-
-    <section id="testimonial-contact" class="testimonial-contact">
-        <div class="container" style="display: flex; gap: 2rem;">
-            <div class="testimonial">
-                <h2 class="section-title" style="color: #fff;">Client Testimonials</h2>
-                <div id="testimonialSlider">
-                    <div class="testimonial-slide">
-                        <p>"Their elite service transformed my transition to France into an extraordinary journey!"</p>
-                        <p>- Priya S., MBA Student at HEC Paris</p>
-                    </div>
-                </div>
-            </div>
-            <div class="contact">
-                <h2 class="section-title">Contact Us</h2>
-                <p class="form-subtitle">Begin your journey to France today</p>
-                <form id="contactForm">
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="name">Name:</label>
-                            <input type="text" id="name" name="name" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="phone">Phone number:</label>
-                            <input type="tel" id="phone" name="phone" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-row">
-                        <div class="form-group">
-                            <label for="comingFrom">Coming from:</label>
-                            <input type="text" id="comingFrom" name="comingFrom" placeholder="City In India" required>
-                        </div>
-                        <div class="form-group">
-                            <label for="goingTo">Going to:</label>
-                            <input type="text" id="goingTo" name="goingTo" placeholder="City In France" required>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label>Services needed:</label>
-                        <div class="checkbox-group">
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="service1" name="services" value="University Admissions & Pre-arrival Services">
-                                <label for="service1">University Admissions & Pre-arrival Services</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="service2" name="services" value="Accommodation Services">
-                                <label for="service2">Accommodation Services</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="service3" name="services" value="Airport Pickup & Post-Arrival Services">
-                                <label for="service3">Airport Pickup & Post-Arrival Services</label>
-                            </div>
-                            <div class="checkbox-item">
-                                <input type="checkbox" id="service4" name="services" value="Others">
-                                <label for="service4">Others (please specify)</label>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="heardAbout">How did you hear about us:</label>
-                        <select id="heardAbout" name="heardAbout" required>
-                            <option value="">Please Choose an Option</option>
-                            <option value="search">Search Engine</option>
-                            <option value="social">Social Media</option>
-                            <option value="friend">Friend Referral</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    <button type="submit">Get in Touch</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
-        });
-
-        // Counter animation
-        function animateCounter(elementId, target, duration) {
-            let start = 0;
-            const element = document.getElementById(elementId);
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                start += increment;
-                element.textContent = Math.floor(start);
-                if (start >= target) {
-                    clearInterval(timer);
-                    element.textContent = target;
-                }
-            }, 16);
-        }
-
-        // Start counter animations when the section is in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter('studentCount', 254, 2000);
-                    animateCounter('cityCount', 5, 1000);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        observer.observe(document.querySelector('.counter'));
-
-        // Question card
-        const questions = [
-            { q: "What visa do I need for studying in France?", a: "Most students require a long-stay student visa. Our expert consultants will guide you through the specific requirements tailored to your program duration and type, ensuring a smooth application process." },
-            { q: "How much does it cost to study in France?", a: "Costs vary depending on the institution and location. We provide comprehensive financial planning, including detailed cost breakdowns, scholarship opportunities, and strategies to optimize your budget for a comfortable stay in France." },
-            { q: "Do I need to know French to study in France?", a: "While knowing French is beneficial, many programs, especially at the graduate level, are offered in English. We offer personalized language preparation programs and can help you find suitable courses that match your language proficiency." }
-        ];
-        let currentQuestion = 0;
-
-        function changeQuestion() {
-            currentQuestion = (currentQuestion + 1) % questions.length;
-            const card = document.getElementById('questionCard');
-            card.innerHTML = `<h3>${questions[currentQuestion].q}</h3><p>${questions[currentQuestion].a}</p>`;
-        }
-
-        // Simple slider
-        const slides = [
-            "Unparalleled Expertise in French Education",
-            "Bespoke Support from Application to Graduation",
-            "Exclusive Partnerships with Elite French Institutions"
-        ];
-        let currentSlide = 0;
-
-        function showSlide() {
-            const slider = document.getElementById('slider');
-            slider.innerHTML = `<div class="slide">${slides[currentSlide]}</div>`;
-            currentSlide = (currentSlide + 1) % slides.length;
-        }
-
-        setInterval(showSlide, 3000);
-        showSlide(); // Show the first slide immediately
-
-        // Testimonial slider
-        const testimonials = [
-            { text: "Their elite service transformed my transition to France into an extraordinary journey!", author: "Priya S., MBA Student at HEC Paris" },
-            { text: "The personalized guidance I received was invaluable. They truly understand the nuances of relocating to France.", author: "Rahul M., Doctoral Candidate at Sorbonne University" },
-            { text: "From visa applications to cultural integration, their comprehensive support exceeded all my expectations.", author: "Anjali K., Engineering Student at École Polytechnique" }
-        ];
-        let currentTestimonial = 0;
-
-        function changeTestimonial() {
-            const slider = document.getElementById('testimonialSlider');
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            slider.innerHTML = `
-                <div class="testimonial-slide">
-                    <p>"${testimonials[currentTestimonial].text}"</p>
-                    <p>- ${testimonials[currentTestimonial].author}</p>
-                </div>
-            `;
-        }
-
-        setInterval(changeTestimonial, 5000);
-
-        // Initialize first question and testimonial
-        changeQuestion();
-        changeTestimonial();
-
-        // Carousel functionality
-        const carousel = document.querySelector('.carousel');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const leftBtn = document.querySelector('.carousel-btn-left');
-        const rightBtn = document.querySelector('.carousel-btn-right');
-
-        let currentIndex = 0;
-        const slideWidth = slides[0].clientWidth;
-
-        function moveToSlide(index) {
-            if (index < 0) {
-                index = slides.length - 1;
-            } else if (index >= slides.length) {
-                index = 0;
-            }
-            carousel.style.transform = `translateX(-${index * slideWidth}px)`;
-            currentIndex = index;
-        }
-
-        leftBtn.addEventListener('click', () => moveToSlide(currentIndex - 1));
-        rightBtn.addEventListener('click', () => moveToSlide(currentIndex + 1));
-
-        // Swipe functionality for mobile
-        let touchStartX = 0;
-        let touchEndX = 0;
-
-        carousel.addEventListener('touchstart', (e) => {
-            touchStartX = e.changedTouches[0].screenX;
-        });
-
-        carousel.addEventListener('touchend', (e) => {
-            touchEndX = e.changedTouches[0].screenX;
-            handleSwipe();
-        });
-
-        function handleSwipe() {
-            if (touchStartX - touchEndX > 50) {
-                moveToSlide(currentIndex + 1);
-            } else if (touchEndX - touchStartX > 50) {
-                moveToSlide(currentIndex - 1);
-            }
-        }
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Add your form submission logic here
-            alert('Thank you for your message. We will get back to you soon!');
-            this.reset();
-        });
-    </script>
+    </main>
 </body>
 </html>
