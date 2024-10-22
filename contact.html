@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elite India to France Consultancy</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --color-dark: #012e40;
+            --color-medium-dark: #024959;
+            --color-medium: #026773;
+            --color-light: #3CA6A6;
+            --color-gold: #19766b;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+    
+        body {
+            font-family: 'Lato', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            padding-top: 60px;
+        }
+    
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+    
+        header {
+            background-color: rgba(1, 46, 64, 0.95);
+            color: #fff;
+            padding: 1rem 0;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+    
+        header.scrolled {
+            background-color: rgba(1, 46, 64, 1);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #fff;
+        }
+    
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+    
+        nav ul li {
+            padding: 0 1rem;
+        }
+    
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 300;
+            transition: color 0.3s ease;
+        }
+    
+        nav a:hover {
+            color: var(--color-gold);
+        }
+    
+        .testimonial-contact {
+            display: flex;
+            margin: 4rem;
+            border-radius: 10px 30px 50px 10px;
+            background-color: #f9f9f9;
+        }
+    
+        .testimonial-section, .contact-section {
+            flex: 1;
+            padding: 4rem;
+            display: flex;
+            flex-direction: column;
+            border: rgb(219, 220, 221) 1px solid;
+            border-radius: 10px 10px 10px 10px;
+            justify-content: center;
+            height: 88vh;
+        }
+    
+        .testimonial-section {
+            background-color: var(--color-medium);
+            color: #fff;
+        }
+    
+        .contact-section {
+            background-color: #fff;
+        }
+    
+        .testimonial-slide {
+            max-width: 800px;
+            margin: auto;
+            font-size: 1.1rem;
+            line-height: 1.6;
+        }
+    
+        .testimonial-slide p:first-child {
+            font-style: italic;
+            margin-bottom: 1rem;
+        }
+    
+        .form-subtitle {
+            text-align: center;
+            margin-bottom: 1.5rem;
+            color: var(--color-medium-dark);
+            font-size: 0.9rem;
+        }
+    
+        .form-row {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+    
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 0.3rem;
+            flex: 1;
+        }
+    
+        .checkbox-group {
+            display: grid;
+            gap: 0.3rem;
+        }
+    
+        .checkbox-item {
+            display: flex;
+            align-items: center;
+            gap: 0.3rem;
+        }
+    
+        .checkbox-item input[type="checkbox"] {
+            width: auto;
+            margin-right: 0.3rem;
+        }
+    
+        select {
+            background-repeat: no-repeat;
+            padding-right: 2rem;
+        }
+    
+        button {
+            margin-top: 1rem;
+        }
+    
+        input, textarea, select {
+            width: 100%;
+            padding: 0.6rem;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-family: 'Lato', sans-serif;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+    
+        input:focus, 
+        textarea:focus,
+        select:focus {
+            outline: none;
+            border-color: var(--color-medium);
+            box-shadow: 0 0 0 2px rgba(2, 103, 115, 0.2);
+        }
+    
+        button {
+            background-color: var(--color-gold);
+            color: #fff;
+            padding: 0.8rem 1.5rem;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+    
+        button:hover, button:active {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+        }
+    
+        @media (max-width: 768px) {
+            nav ul {
+                display: none;
+            }
+    
+            .testimonial-contact {
+                flex-direction: column;
+            }
+    
+            .form-row {
+                flex-direction: column;
+            }
+        }
+    
+        .main-content {
+            padding-top: 60px;
+        }
+    </style>
+</head>
+<body>
+    <header id="header">
+        <div class="container">
+            <nav>
+                <div class="logo">I2F Services</div>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="about-us.html">About Us</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+
+    <section class="lorem-ipsum">
+    </section>
+    
+    <section class="testimonial-contact">
+        <div class="testimonial-section">
+            <h2 class="section-title" style="color: #fff;">Client Testimonials</h2>
+            <div id="testimonialSlider" style="margin-top: 2rem;">
+                <div class="testimonial-slide">
+                    <p>"Their elite service transformed my transition to France into an extraordinary journey!"</p>
+                    <p>- Priya S., MBA Student at HEC Paris</p>
+                </div>
+            </div>
+        </div>
+        <div class="contact-section"> 
+            <iframe src="https://www.cognitoforms.com/f/mC21UZO_LUKAjxzRdgFNIw/1" allow="payment" style="border:0;width:100%;" height="695"></iframe>
+        <script src="https://www.cognitoforms.com/f/iframe.js"></script>
+        </div>
+        
+    
+    </section>
+
+
+
+</body>
+</html>
