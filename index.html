@@ -62,6 +62,17 @@
             color: #fff;
         }
 
+        .logo-image {
+            width: 65px;
+            height: 65px;
+            margin-right: 10px;
+        }
+
+        .logo-container{
+            display: flex;
+            align-items: center;
+        }
+
         nav ul {
             display: flex;
             list-style: none;
@@ -449,7 +460,7 @@
             border: rgb(219, 220, 221) 1px solid;
             border-radius: 10px 10px 10px 10px;
             justify-content: center;
-            height: 88vh;
+            height: 50vh;
         }
 
         .testimonial-section {
@@ -633,7 +644,11 @@
     <header id="header">
         <div class="container">
             <nav>
-                <div class="logo">I2F studentservices</div>
+                <div class="logo-container">
+                    <img src="/white-logo.png" alt="I2F studentservices Logo" class="logo-image">
+                    <div class="logo">I2F studentservices</div>
+                </div>
+                
                 <ul>
                     <li><a href="index.html">Home</a></li>
                     <li><a href="services.html">Services</a></li>
