@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I2F Student Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .rotate-180 {
+            transform: rotate(180deg);
+            transition: transform 0.3s ease;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col font-sans">
+    <header class="bg-[#012e40] text-white p-4 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 md:px-8 max-w-7xl">
+            <div class="flex items-center space-x-2">
+                <img src="white-logo.png" alt="I2F Logo" width="65" height="65" onerror="this.src='/placeholder.svg?height=65&width=65'">
+                <span class="text-xl md:text-2xl font-bold">I2F Student Services</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="/" class="hover:text-[#19766b] transition-colors duration-300">Home</a></li>
+                    <li><a href="/service.html" class="hover:text-[#19766b] transition-colors duration-300">Services</a></li>
+                    <li><a href="/" class="hover:text-[#19766b] transition-colors duration-300">About Us</a></li>
+                    <li><a href="/contact" class="hover:text-[#19766b] transition-colors duration-300">Contact</a></li>
+                </ul>
+            </nav>
+            <button class="md:hidden" id="mobileMenuButton">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        <nav class="md:hidden mt-4 hidden" id="mobileMenu">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="/" class="block py-2 px-4 hover:bg-[#19766b] transition-colors duration-300">Home</a></li>
+                <li><a href="/service.html" class="block py-2 px-4 hover:bg-[#19766b] transition-colors duration-300">Services</a></li>
+                <li><a href="#" class="block py-2 px-4 hover:bg-[#19766b] transition-colors duration-300">About Us</a></li>
+                <li><a href="/contact" class="block py-2 px-4 hover:bg-[#19766b] transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="flex-grow bg-white pt-20">
+        <section class="py-8 md:py-16">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <h1 class="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-[#026773]">Our Services</h1>
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6" id="servicesGrid">
+                    <!-- Services will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="py-8 md:py-16 bg-gray-100">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <h2 class="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-[#026773]">Frequently Asked Questions</h2>
+                <div class="space-y-4" id="faqContainer">
+                    <!-- FAQs will be dynamically inserted here -->
+                </div>
+            </div>
+        </section>
+
+        <section class="py-8 md:py-16 bg-[#026773]">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <div class="bg-[#026773] text-white rounded-lg p-6 md:p-8 text-center">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-4">Ready to Start Your French Adventure?</h2>
+                    <p class="text-sm md:text-base mb-6">
+                        From your visa applications to cultural integration, we offer comprehensive services tailored to your specific needs.
+                        <br> 
+                        Take the first step towards your French journey today!
+                    </p>
+                    <a href="/contact.html" class="bg-white hover:bg-gray-100 text-[#19766b] font-bold py-2 px-4 rounded-full text-sm md:text-lg inline-block transition-all duration-300 hover:shadow-lg">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-[#012e40] text-white py-6 md:py-8">
+        <div class="container mx-auto text-center px-4 md:px-8 max-w-7xl">
+            <p class="text-xs md:text-sm">&copy; 2023 I2F Student Services. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const mobileMenu = document.getElementById('mobileMenu');
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Services data
+        const services = [
+            {
+                title: "University Admissions",
+                description: "Navigating university applications can be overwhelming, but we're here to make it easy. From selecting the right university to preparing a strong application, our admissions support guides you at every step, ensuring you're ready to take on your academic journey with confidence."
+            },
+            {
+                title: "Visa Procedures",
+                description: "Getting a visa is a crucial step in studying abroad, and we simplify the entire process. We help you gather the right documents, complete applications, and prepare for embassy interviews—so you can focus on your future, not the paperwork."
+            },
+            {
+                title: "Accommodation",
+                description: "Finding a safe, affordable place to live in a new country is challenging. With our trusted partnerships, we help secure housing options tailored to your needs, whether you prefer shared student housing or private apartments."
+            },
+            {
+                title: "Airport Pickup",
+                description: "Arriving in a new country can be daunting. We offer airport pickup services to take you from the terminal to your new home, making sure you start your journey with ease and peace of mind."
+            },
+            {
+                title: "On-Arrival Assistance",
+                description: "Settling in smoothly matters. We assist with getting a local SIM card, navigating public transport, and completing essential visa validation so you can quickly adjust and start enjoying your new life abroad."
+            },
+            {
+                title: "Bank Account",
+                description: "Opening a bank account is vital for managing your finances abroad. Our team will help you choose a suitable bank, handle the paperwork, and complete the process efficiently, making sure you're financially prepared."
+            },
+            {
+                title: "Social Security",
+                description: "Understanding a foreign healthcare system can be tough. We guide you through the process of registering for social security so you're covered for health and medical needs during your studies."
+            },
+            {
+                title: "CAF Housing Allowance",
+                description: "As a student in France, you may qualify for a housing allowance to help with rent. We help you navigate the CAF application, making it easy for you to access this valuable support."
+            }
+        ];
+
+        // FAQs data
+        const faqs = [
+            {
+                question: "What are the visa requirements for Indian students?",
+                answer: "Indian students need a long-stay student visa (VLS-TS), which requires an acceptance letter from a French institution, proof of sufficient funds, accommodation arrangements, and health insurance coverage. The Campus France procedure is mandatory for Indian students."
+            },
+            {
+                question: "How long does it take to learn French?",
+                answer: "The time to learn French varies depending on your starting level and intensity of study. With consistent effort, you can reach a basic conversational level in 3-6 months. To achieve academic proficiency, it typically takes 1-2 years of dedicated study."
+            },
+            {
+                question: "Are there job opportunities for Indians in France?",
+                answer: "Yes, there are opportunities for Indians in France, especially in fields like IT, engineering, and research. However, most jobs require French language skills. International companies and startups in tech hubs like Paris and Lyon often have English-speaking roles."
+            },
+            {
+                question: "What's the cost of living for Indian students in France?",
+                answer: "The cost of living varies by city. In Paris, students should budget around €1,000-€1,500 per month, including rent. In smaller cities, €700-€1,000 might suffice. This covers accommodation, food, transport, and other essentials. Remember, many students are eligible for housing assistance (CAF), which can significantly reduce costs."
+            }
+        ];
+
+        // Populate services
+        const servicesGrid = document.getElementById('servicesGrid');
+        services.forEach((service, index) => {
+            const serviceElement = document.createElement('div');
+            serviceElement.className = 'bg-white rounded-lg border border-gray-200 overflow-hidden shadow-md';
+            serviceElement.innerHTML = `
+                <div class="p-4 md:p-6">
+                    <h2 class="text-lg md:text-xl font-bold text-[#026773] mb-2">${service.title}</h2>
+                    <p class="text-sm md:text-base text-gray-600 mb-4">${service.description.split('.')[0]}.</p>
+                    <div class="flex justify-end items-center">
+                        <button class="flex items-center text-[#19766b] hover:text-[#026773] transition-colors duration-300" onclick="toggleService(${index})" aria-label="Toggle service details">
+                            <span class="mr-2">More Info</span>
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300" id="service-icon-${index}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                            </svg>
+                        </button>
+                    </div>
+                    <div class="mt-4 hidden" id="service-content-${index}">
+                        <p class="text-sm md:text-base text-gray-700">${service.description}</p>
+                    </div>
+                </div>
+            `;
+            servicesGrid.appendChild(serviceElement);
+        });
+
+        // Populate FAQs
+        const faqContainer = document.getElementById('faqContainer');
+        faqs.forEach((faq, index) => {
+            const faqElement = document.createElement('div');
+            faqElement.className = 'bg-[#026773] rounded-lg overflow-hidden';
+            faqElement.innerHTML = `
+                <div class="p-4 md:p-6 cursor-pointer flex justify-between items-center text-white" onclick="toggleFAQ(${index})">
+                    <h3 class="text-base md:text-lg font-semibold">${faq.question}</h3>
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 transition-transform duration-300" id="faq-icon-${index}" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                    </svg>
+                </div>
+                <div class="px-4 md:px-6 py-4 md:py-6 bg-white hidden" id="faq-answer-${index}">
+                    <p class="text-sm md:text-base text-gray-700">${faq.answer}</p>
+                </div>
+            `;
+            faqContainer.appendChild(faqElement);
+        });
+
+        // Toggle service content
+        function toggleService(index) {
+            const content = document.getElementById(`service-content-${index}`);
+            const icon = document.getElementById(`service-icon-${index}`);
+            content.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+
+        // Toggle FAQ answer
+        function toggleFAQ(index) {
+            const answer = document.getElementById(`faq-answer-${index}`);
+            const icon = document.getElementById(`faq-icon-${index}`);
+            answer.classList.toggle('hidden');
+            icon.classList.toggle('rotate-180');
+        }
+    </script>
+</body>
+</html>

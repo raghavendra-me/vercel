@@ -3,1060 +3,324 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>i2f</title>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <title>I2F Student Services</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <style>
-        :root {
-            --color-dark: #012e40;
-            --color-medium-dark: #024959;
-            --color-medium: #026773;
-            --color-light: #3CA6A6;
-            --color-gold: #19766b;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
         body {
-            font-family: 'Lato', sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f9f9f9;
+            font-family: 'Inter', sans-serif;
         }
 
-        .container {
-            width: 90%;
-            max-width: 1200px;
-            margin: auto;
-            overflow: hidden;
+        .bg-primary {
+            background-color: #012e40;
         }
 
-        header {
-            background-color: rgba(1, 46, 64, 0.95);
-            color: #fff;
-            padding: 1rem 0;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-            transition: all 0.3s ease;
+        .bg-secondary {
+            background-color: #19766b;
         }
 
-        header.scrolled {
-            background-color: rgba(1, 46, 64, 1);
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        .text-primary {
+            color: #026773;
         }
 
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
+        .text-secondary {
+            color: #19766b;
         }
 
-        .logo {
-            font-family: 'Playfair Display', serif;
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: #fff;
+        .hover-bg-secondary:hover {
+            background-color: #19766b;
         }
 
-        .logo-image {
-            width: 65px;
-            height: 65px;
-            margin-right: 10px;
-        }
-
-        .logo-container{
-            display: flex;
-            align-items: center;
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav ul li {
-            padding: 0 1rem;
-        }
-
-        nav a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: 300;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover {
-            color: var(--color-gold);
-        }
-
-        .banner {
-    background: linear-gradient(rgba(1, 46, 64, 0.3), rgba(2, 73, 89, 0.3)), 
-                url('https://media3.giphy.com/media/v1.Y2lkPTc5MGI3NjExNTJqODR0azMxazA3Y2l5ZjBiNW16OGI5dHRwYmNpb29wNTFoYmtxNyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/iD6nsRMc7XRlgHi1YZ/giphy.webp');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    color: #fff;
-    text-align: center;
-    padding: 12rem 0 8rem;
-    position: relative;
-    height: 80vh; /* Full viewport height */
-}
-
-
-        .banner::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: radial-gradient(circle, rgba(1, 46, 64, 0.3) 0%, rgba(1, 46, 64, 0.6) 100%);
-        }
-
-        .banner-content {
-            position: relative;
-            z-index: 1;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .banner h1 {
-            font-family: 'Playfair Display', serif;
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-            letter-spacing: 2px;
-        }
-
-        .banner p {
-            font-size: 1.2rem;
-            margin-bottom: 2rem;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        .banner .btn {
-            font-size: 1.1rem;
-            padding: 1rem 2.5rem;
-            background-color: var(--color-gold);
-            color: #fff;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: all 0.3s ease;
-        }
-
-        .banner .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .btn {
-            display: inline-block;
-            background-color: var(--color-gold);
-            color: white;
-            padding: 1rem 2.5rem;
-            text-decoration: none;
-            border-radius: 50px;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        .btn:hover, .btn:active {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .section-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--color-dark);
-            text-align: center;
-            margin-bottom: 2rem;
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            display: block;
-            width: 50px;
-            height: 3px;
-            background-color: var(--color-gold);
-            margin: 1rem auto 0;
-        }
-
-        .flashcards-section {
-            padding: 6rem 0;
-            background-color: #f9f9f9;
-            display: flex;
-            align-items: center;
-        }
-
-        .flashcards-content {
-            flex: 1;
-            padding-right: 2rem;
-        }
-
-        .flashcards-container {
-            flex: 1;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 350px;
-            position: relative;
-            overflow: visible;
-        }
-
-        .flashcard {
-            width: 250px;
-            height: 300px;
-            background-color: #fff;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            font-size: 1rem;
-            position: absolute;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            padding: 1rem;
-            text-align: center;
-        }
-
-        .flashcard h3 {
-            margin-bottom: 0.5rem;
-        }
-
-        .flashcard:nth-child(1) {
-            z-index: 3;
-            transform: translateX(0) scale(1);
-        }
-
-        .flashcard:nth-child(2) {
-            z-index: 2;
-            transform: translateX(50px) scale(0.9);
-        }
-
-        .flashcard:nth-child(3) {
-            z-index: 1;
-            transform: translateX(100px) scale(0.8);
-        }
-
-        .questions {
-            background-color: #fff;
-            padding: 6rem 0;
-            position: relative;
-        }
-
-        .card {
-            background-color: #fff;
-            border-radius: 10px;
-            padding: 2rem;
-            margin: 2rem 0;
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-        }
-
-        .scrolling-banner-container {
-            width: 100%;
-            overflow: hidden;
-            background-color: #f0f0f0;
-            padding: 10px 0;
-        }
-
-        .scrolling-banner {
-            display: flex;
-            white-space: nowrap;
-        }
-
-        .scroll-banner-content {
-            display: inline-block;
-            padding-right: 50px;
-            animation: scroll 35s linear infinite;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        .carousel-container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 2rem auto;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .carousel {
-            display: flex;
-            transition: transform 0.5s ease;
-        }
-
-        .carousel-slide {
-            flex: 0 0 100%;
-            display: flex;
-            padding: 2rem;
+        .transition-colors {
+            transition-property: background-color, border-color, color, fill, stroke;
+            transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+            transition-duration: 300ms;
         }
 
         .carousel-image {
-            flex: 0 0 50%;
             height: 400px;
-            background-size: cover;
-            background-position: center;
-        }
-
-        .carousel-content {
-            flex: 0 0 50%;
-            padding: 2rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .carousel-title {
-            font-family: 'Playfair Display', serif;
-            font-size: 2.5rem;
-            color: var(--color-dark);
-            margin-bottom: 1rem;
-        }
-
-        .carousel-text {
-            font-size: 1.1rem;
-            color: var(--color-medium-dark);
-        }
-
-        .carousel-btn {
-            position: absolute;
-            top: 50%;
-            transform: translateY(-50%);
-            background-color: var(--color-gold);
-            color: #fff;
-            border: none;
-            padding: 1rem;
-            cursor: pointer;
-            font-size: 1.5rem;
-            transition: all 0.3s ease;
-        }
-
-        .carousel-btn:hover {
-            transform: translateY(-50%) scale(1.1);
-        }
-
-        .carousel-btn-left {
-            left: 1rem;
-        }
-
-        .carousel-btn-right {
-            right: 1rem;
-        }
-
-        .counter {
-            background-color: var(--color-medium-dark);
-            color: #fff;
-            padding: 6rem 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .counter::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, rgba(255,255,255,0) 70%);
-        }
-
-        .counter-item {
-            font-size: 3rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            font-family: 'Playfair Display', serif;
-        }
-
-        .slider {
-            background-color: #fff;
-            padding: 6rem 0;
-            text-align: center;
-            position: relative;
-        }
-
-        .slide {
-            font-size: 1.5rem;
-            font-style: italic;
-            color: var(--color-medium);
-        }
-
-        .services {
-            padding: 6rem 0;
-            background-color: #f9f9f9;
-            position: relative;
-        }
-
-        .services ul {
-            list-style: none;
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .services li {
-            background-color: #fff;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            border: 1px solid #f0f0f0;
-            text-align: center;
-        }
-
-        .services li:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
-        }
-
-        .services li::before {
-            content: '✦';
-            display: block;
-            font-size: 2rem;
-            color: var(--color-gold);
-            margin-bottom: 1rem;
-        }
-
-        .testimonial-contact {
-            display: flex;
-            /* padding: 4rem; */
-            /* border: #024959 1px solid; */
-            margin: 4rem;
-            border-radius: 10px 30px 50px 10px;
-            background-color: #f9f9f9;
-            /* min-height: 100vh; */
-        }
-
-        .testimonial-section, .contact-section {
-            flex: 1;
-            padding: 4rem;
-            display: flex;
-            flex-direction: column;
-            border: rgb(219, 220, 221) 1px solid;
-            border-radius: 10px 10px 10px 10px;
-            justify-content: center;
-            height: 50vh;
-        }
-
-        .testimonial-section {
-            background-color: var(--color-medium);
-            color: #fff;
-        }
-
-        .contact-section {
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .testimonial-slide {
-            max-width: 800px;
-            margin: auto;
-            font-size: 1.1rem;
-            line-height: 1.6;
-        }
-
-        .testimonial-slide p:first-child {
-            font-style: italic;
-            margin-bottom: 1rem;
-        }
-
-        .form-subtitle {
-            text-align: center;
-            margin-bottom: 1.5rem;
-            color: var(--color-medium-dark);
-            font-size: 0.9rem;
-        }
-
-        .form-row {
-            display: flex;
-            gap: 1rem;
-            margin-bottom: 1rem;
-        }
-
-        .form-group {
-            display: flex;
-            flex-direction: column;
-            gap: 0.3rem;
-            flex: 1;
-        }
-
-        .checkbox-group {
-            display: grid;
-            gap: 0.3rem;
-        }
-
-        .checkbox-item {
-            display: flex;
-            align-items: center;
-            gap: 0.3rem;
-        }
-
-        .checkbox-item input[type="checkbox"] {
-            width: auto;
-            margin-right: 0.3rem;
-        }
-
-        select {
-            background-repeat: no-repeat;
-            padding-right: 2rem;
-        }
-
-        button {
-            margin-top:  1rem;
-        }
-
-        input, textarea, select {
-            width: 100%;
-            padding: 0.6rem;
-            border: 1px solid #ddd;
-            border-radius: 5px;
-            font-family: 'Lato', sans-serif;
-            font-size: 0.9rem;
-            transition: all 0.3s ease;
-        }
-
-        input:focus, 
-        textarea:focus,
-        select:focus {
-            outline: none;
-            border-color: var(--color-medium);
-            box-shadow: 0 0 0 2px rgba(2, 103, 115, 0.2);
-        }
-
-        button {
-            background-color: var(--color-gold);
-            color: #fff;
-            padding: 0.8rem 1.5rem;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-
-        button:hover, button:active {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.2);
-        }
-
-        .lorem-ipsum {
-            padding: 6rem 0;
-            background-color: #fff;
-            text-align: center;
-        }
-
-        .lorem-ipsum p {
-            font-size: 1.1rem;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 1.5rem auto;
+            object-fit: cover;
         }
 
         @media (max-width: 768px) {
-            nav ul {
-                display: none;
-            }
-
-            .banner h1 {
-                font-size: 2.5rem;
-            }
-
-            .banner p {
-                font-size: 1rem;
-            }
-
-            .banner .btn {
-                font-size: 1rem;
-                padding: 0.8rem 2rem;
-            }
-
-            .carousel-slide {
-                flex-direction: column;
-            }
-
-            .carousel-image,
-            .carousel-content {
-                flex: 0 0 100%;
-            }
-
             .carousel-image {
-                height: 200px;
-            }
-
-            .carousel-content {
-                padding: 1rem;
-            }
-
-            .carousel-title {
-                font-size: 2rem;
-            }
-
-            .carousel-text {
-                font-size: 1rem;
-            }
-
-            .counter-item {
-                font-size: 2.5rem;
-            }
-
-            .services ul {
-                grid-template-columns: 1fr;
-            }
-
-            .testimonial-contact {
-                flex-direction: column;
-            }
-
-            .form-row {
-                flex-direction: column;
+                height: 250px;
             }
         }
     </style>
 </head>
-<body>
-    <header id="header">
-        <div class="container">
-            <nav>
-                <div class="logo-container">
-                    <img src="/white-logo.png" alt="I2F studentservices Logo" class="logo-image">
-                    <div class="logo">I2F studentservices</div>
-                </div>
-                
-                <ul>
-                    <li><a href="index.html">Home</a></li>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about-us.html">About Us</a></li>
-                    <li><a href="contact.html">Contact</a></li>
+<body class="min-h-screen flex flex-col font-sans">
+    <header class="bg-primary text-white p-4 fixed w-full z-50">
+        <div class="container mx-auto flex justify-between items-center px-4 md:px-8 max-w-7xl">
+            <div class="flex items-center space-x-2">
+                <img src="white-logo.png" alt="I2F Logo" class="w-16 h-16">
+                <span class="text-xl md:text-2xl font-bold">I2F Student Services</span>
+            </div>
+            <nav class="hidden md:block">
+                <ul class="flex space-x-6">
+                    <li><a href="#" class="hover:text-secondary transition-colors duration-300">Home</a></li>
+                    <li><a href="service.html" class="hover:text-secondary transition-colors duration-300">Services</a></li>
+                    <li><a href="" class="hover:text-secondary transition-colors duration-300">About Us</a></li>
+                    <li><a href="contact.html" class="hover:text-secondary transition-colors duration-300">Contact</a></li>
                 </ul>
             </nav>
+            <button id="mobileMenuButton" class="md:hidden">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
         </div>
+        <nav id="mobileMenu" class="md:hidden mt-4 hidden">
+            <ul class="flex flex-col space-y-2">
+                <li><a href="#" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Home</a></li>
+                <li><a href="service.html" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Services</a></li>
+                <li><a href="" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">About Us</a></li>
+                <li><a href="contact.html" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Contact</a></li>
+            </ul>
+        </nav>
     </header>
 
-    <section id="home" class="banner">
-        <div class="container">
-            <div class="banner-content">
-                <h1>All the way with you. From India to France</h1>
-                <p>ANYTHING YOU'RE LOOKING FOR, FROM FINDING THE PERFECT UNIVERSITY TO AN EASIER WAY TO OPEN A BANK ACCOUNT, I2F CAN HELP YOU</p>
-                <a href="#contact" class="btn">Begin Your Journey</a>
+    <main class="pt-20">
+        <section class="bg-primary text-white py-16 md:py-40 relative">
+            <div class="absolute inset-0 bg-cover bg-center z-0" style="background-image: url('/placeholder.svg?height=800&width=1200'); background-size: cover; background-position: center;"></div>
+            <div class="absolute inset-0 bg-black opacity-50 z-10"></div>
+            <div class="container mx-auto text-center relative z-20 px-4 md:px-8 max-w-7xl">
+                <h1 class="text-2xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                    All the way with you, from India to France
+                </h1>
+                <p class="text-base md:text-xl mb-8 max-w-3xl mx-auto">
+                    ANYTHING YOU'RE LOOKING FOR, FROM FINDING THE PERFECT UNIVERSITY
+                    TO AN EASIER WAY TO OPEN A BANK ACCOUNT, I2F CAN HELP YOU!
+                </p>
+                <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg">
+                    BEGIN YOUR JOURNEY
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
 
-   
+        <section class="py-8 md:py-12 bg-white">
+            <div class="container mx-auto text-center px-4 md:px-8 max-w-7xl">
+                <p class="text-base md:text-lg lg:text-xl italic mb-2 text-secondary font-medium">
+                    "Friends in the same boat as you are not consultants. Consultants are never in the same boat as you."
+                </p>
+                <p class="text-base md:text-lg lg:text-xl italic mb-2 text-secondary font-medium">
+                    Around 98% of students moving to France choose one and miss out on the other.
+                </p>
+                <p class="text-base md:text-lg lg:text-xl italic font-bold text-secondary">
+                    Be better. Choose both. Choose I2F
+                </p>
+            </div>
+        </section>
 
-    <!-- <section class="flashcards-section">
-        <div class="container" style="display: flex; align-items: center;">
-            <div class="flashcards-content">
-                <h2 class="section-title">Interactive Flashcards</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-            </div>
-            <div class="flashcards-container" id="flashcardsContainer">
-                <div class="flashcard">
-                    <h3>Card 1</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                </div>
-                <div class="flashcard">
-                    <h3>Card 2</h3>
-                    <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-                </div>
-                <div class="flashcard">
-                    <h3>Card 3</h3>
-                    <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-                </div>
-            </div>
-        </div>
-    </section> -->
-
-    <section class="lorem-ipsum">
-        <div class="container">
-            <!-- <h2 class="section-title">Lorem Ipsum</h2> -->
-            <!-- <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p> -->
-            <p style="font-style: italic;">Friends in the same boat as you are not consultants
-                Consultants are never in the same boat as you.
-            </p>
-            <p style="font-style: italic;">
-                98% students moving to France choose one and miss out on the other. Be better. Choose both. 
-            </p>
-            <p style="font-style: italic;">
-                Choose I2F
-            </p>
-        </div>
-    </section>
-
-
-    <div class="carousel-container">
-        <div class="carousel">
-            <div class="carousel-slide">
-                <div class="carousel-image" style="background-image: url('https://picsum.photos/800/400?random=1');"></div>
-                <div class="carousel-content">
-                    <h2 class="carousel-title">Studying in France</h2>
-                    <p class="carousel-text">I2F can help you find the perfect university for you after assessing your needs and analyzing your profile. We also go a step ahead, and guide you with creating an iron-clad application for the university to help you secure admissions
-                    </p>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <div class="carousel-image" style="background-image: url('https://picsum.photos/800/400?random=2');"></div>
-                <div class="carousel-content">
-                    <h2 class="carousel-title">Preparing Yourself For The Big Move</h2>
-                    <p class="carousel-text">You can focus on your goodbyes and mental preparation for moving abroad, while I2F takes care of applying for your visa, helping you find accommodation and guide you with all the documentation necessary to start living in your home away from home
-                    </p>
-                </div>
-            </div>
-            <div class="carousel-slide">
-                <div class="carousel-image" style="background-image: url('https://picsum.photos/800/400?random=3');"></div>
-                <div class="carousel-content">
-                    <h2 class="carousel-title">Settling In</h2>
-                    <p class="carousel-text">I2F will ensure that your settling in process is seamless by taking care of all your documentation needs like visa validation, social security and CAF while also providing you with a welcome package which includes creating a bank account, sim card and all other provisions that can make your student life easier. 
-                    </p>
-                </div>
-            </div>
-        </div>
-        <button class="carousel-btn carousel-btn-left">&lt;</button>
-        <button class="carousel-btn carousel-btn-right">&gt;</button>
-    </div>
-
-    <section class="counter">
-        <div class="container">
-            <h2 class="section-title" style="color: #fff;">Our Impact</h2>
-            <div style="display: flex; justify-content: space-around; margin-top: 2rem;">
-                <div>
-                    <div class="counter-item" id="studentCount">0</div>
-                    <p>Students Guided</p>
-                </div>
-                <div>
-                    <div class="counter-item" id="cityCount">0</div>
-                    <p>French Cities Covered</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="scrolling-banner-container">
-        <div class="scrolling-banner">
-            <div class="scroll-banner-content">
-                University Selection and Application assistance &nbsp;&nbsp;&nbsp; VFS &nbsp;&nbsp;&nbsp; Accommodation &nbsp;&nbsp;&nbsp; 
-                Post-Arrival Documentation (Visa Validation, Social Security, CAF) &nbsp;&nbsp;&nbsp; Bank Account &nbsp;&nbsp;&nbsp; 
-                SIM Card &nbsp;&nbsp;&nbsp; Transportation &nbsp;&nbsp;&nbsp; Airport pick up and settling in services &nbsp;&nbsp;&nbsp;
-                University Selection and Application assistance &nbsp;&nbsp;&nbsp; VFS &nbsp;&nbsp;&nbsp; Accommodation &nbsp;&nbsp;&nbsp; 
-                Post-Arrival Documentation (Visa Validation, Social Security, CAF) &nbsp;&nbsp;&nbsp; Bank Account &nbsp;&nbsp;&nbsp; 
-                SIM Card &nbsp;&nbsp;&nbsp; Transportation &nbsp;&nbsp;&nbsp; Airport pick up and settling in services &nbsp;&nbsp;&nbsp;
-            </div>
-            <div class="scroll-banner-content">
-                University Selection and Application assistance &nbsp;&nbsp;&nbsp; VFS &nbsp;&nbsp;&nbsp; Accommodation &nbsp;&nbsp;&nbsp; 
-                Post-Arrival Documentation (Visa Validation, Social Security, CAF) &nbsp;&nbsp;&nbsp; Bank Account &nbsp;&nbsp;&nbsp; 
-                SIM Card &nbsp;&nbsp;&nbsp; Transportation &nbsp;&nbsp;&nbsp; Airport pick up and settling in services &nbsp;&nbsp;&nbsp;
-                University Selection and Application assistance &nbsp;&nbsp;&nbsp; VFS &nbsp;&nbsp;&nbsp; Accommodation &nbsp;&nbsp;&nbsp; 
-                Post-Arrival Documentation (Visa Validation, Social Security, CAF) &nbsp;&nbsp;&nbsp; Bank Account &nbsp;&nbsp;&nbsp; 
-                SIM Card &nbsp;&nbsp;&nbsp; Transportation &nbsp;&nbsp;&nbsp; Airport pick up and settling in services &nbsp;&nbsp;&nbsp;
-            </div>
-        </div>
-        
-        </div>
-    </div>
-
-    <div style="padding: 60px 0; background-color: #ffffff;">
-        <div style="max-width: 1000px; margin: 0 auto; padding: 0 15px;">
-            <div style="text-align: center; margin-bottom: 40px;">
-                <h2 style="font-size: 36px; color: #026773; margin-bottom: 15px; font-weight: bold; letter-spacing: 1px;">All You Need is 3 Steps to Get from India to France.</h2>
-            </div>
-            <div style="display: flex; justify-content: space-between; align-items: flex-start; position: relative;">
-                <div style="flex: 0 0 30%; text-align: center; display: flex; flex-direction: column; height: 100%;">
-                    <img src="illustration1.svg" alt="Fill The form" style="max-width: 80%; height: auto; margin: 0 auto 15px;">
-                    <div style="background-color: #026773; color: #ffffff; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; font-size: 18px; font-weight: bold;">01</div>
-                    <h3 style="font-size: 20px; color: #026773; margin-bottom: 10px; letter-spacing: 0.5px;">Fill The form</h3>
-                </div>
-                <div style="flex: 0 0 30%; text-align: center; display: flex; flex-direction: column; height: 100%;">
-                    <img src="illustration2.svg" alt="Discuss requirements" style="max-width: 80%; height: auto; margin: 0 auto 15px;">
-                    <div style="background-color: #026773; color: #ffffff; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; font-size: 18px; font-weight: bold;">02</div>
-                    <h3 style="font-size: 20px; color: #026773; margin-bottom: 10px; letter-spacing: 0.5px;">Discuss your requirements<br>and submit necessary<br>documents</h3>
-                </div>
-                <div style="flex: 0 0 30%; text-align: center; display: flex; flex-direction: column; height: 100%;">
-                    <img src="illustration3.svg" alt="Experience journey" style="max-width: 80%; height: auto; margin: 0 auto 15px;">
-                    <div style="background-color: #026773; color: #ffffff; width: 40px; height: 40px; border-radius: 50%; display: flex; justify-content: center; align-items: center; margin: 0 auto 15px; font-size: 18px; font-weight: bold;">03</div>
-                    <h3 style="font-size: 20px; color: #026773; margin-bottom: 10px; letter-spacing: 0.5px;">Experience a hassle free<br>journey from India to France</h3>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <!-- <section class="lorem-ipsum">
-        <div class="container">
-            <h2 class="section-title">Lorem Ipsum</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.</p>
-            <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.</p>
-        </div>
-    </section> -->
-    
-    <section class="lorem-ipsum">
-        <div class="container">
-            <p style="font-style: italic; margin-bottom: 1.5rem; font-size: 1.2rem;">&ldquo;Hop on a Free Call with One of Our Student Partners to Know More. No Commitments. Only Love&nbsp;and&nbsp;Support.&rdquo;</p>
-        </div>
-    </section>
-
-    <section class="testimonial-contact">
-        <div class="testimonial-section">
-            <h2 class="section-title" style="color: #fff;">Client Testimonials</h2>
-            <div id="testimonialSlider" style="margin-top: 2rem;">
-                <div class="testimonial-slide">
-                    <p>"Their elite service transformed my transition to France into an extraordinary journey!"</p>
-                    <p>- Priya S., MBA Student at HEC Paris</p>
-                </div>
-            </div>
-        </div>
-        <!-- <div class="contact-section">
-            <h2 class="section-title">Tell us what you need!</h2>
-            <p class="form-subtitle">We'll reach out to you with seamless solutions and virtual high-fives! Not spam.</p>
-            <form id="contactForm">
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="name">Name:</label>
-                        <input type="text" id="name" name="name" required>
+        <section class="py-12 md:py-16 bg-gray-100">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <div class="flex items-center justify-center">
+                    <button id="prevSlide" class="mr-4 bg-secondary text-white p-2 rounded-full shadow-md" aria-label="Previous slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+                        </svg>
+                    </button>
+                    <div id="carouselContent" class="flex flex-col md:flex-row items-center w-full">
+                        <!-- Carousel content will be dynamically inserted here -->
                     </div>
-                    <div class="form-group">
-                        <label for="phone">Phone number:</label>
-                        <input type="tel" id="phone" name="phone" required>
-                    </div>
+                    <button id="nextSlide" class="ml-4 bg-secondary text-white p-2 rounded-full shadow-md" aria-label="Next slide">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
-                <div class="form-group">
-                    <label for="email">Email:</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <div class="form-row">
-                    <div class="form-group">
-                        <label for="comingFrom">Coming from:</label>
-                        <input type="text" id="comingFrom" name="comingFrom" placeholder="City In India" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="goingTo">Going to:</label>
-                        <input type="text" id="goingTo" name="goingTo" placeholder="City In France" required>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <label>Services needed:</label>
-                    <div class="checkbox-group">
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="service1" name="services" value="University Admissions & Pre-arrival Services">
-                            <label for="service1">University Admissions & Pre-arrival Services</label>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 bg-white">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <h2 class="text-2xl md:text-3xl font-bold text-center mb-8 md:mb-12 text-primary">All you need is just 3 steps to get from India to France</h2>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="text-center flex flex-col items-center">
+                        <div class="w-48 h-48 mb-4 relative">
+                            <img src="illustration1.svg" alt="Step 1" class="absolute inset-0 w-full h-full object-contain">
                         </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="service2" name="services" value="Accommodation Services">
-                            <label for="service2">Accommodation Services</label>
+                        <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
+                            1
                         </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="service3" name="services" value="Airport Pickup & Post-Arrival Services">
-                            <label for="service3">Airport Pickup & Post-Arrival Services</label>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center">Fill in the form and choose your required services</h3>
+                    </div>
+                    <div class="text-center flex flex-col items-center">
+                        <div class="w-48 h-48 mb-4 relative">
+                            <img src="illustration2.svg" alt="Step 2" class="absolute inset-0 w-full h-full object-contain">
                         </div>
-                        <div class="checkbox-item">
-                            <input type="checkbox" id="service4" name="services" value="Others">
-                            <label for="service4">Others (please specify)</label>
+                        <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
+                            2
+                        </div>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center">Discuss the requirements & submit necessary documents</h3>
+                    </div>
+                    <div class="text-center flex flex-col items-center">
+                        <div class="w-48 h-48 mb-4 relative">
+                            <img src="illustration3.svg" alt="Step 3" class="absolute inset-0 w-full h-full object-contain">
+                        </div>
+                        <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
+                            3
+                        </div>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center">Experience a hassle free journey from India to France!</h3>
+                    </div>
+                </div>
+                <p class="text-center mt-8 md:mt-12 text-base md:text-lg italic text-gray-600">
+                    Hop on a free call with one of our student partners to know more.<br>
+                    No commitments, only love and support.
+                </p>
+            </div>
+        </section>
+
+        <section class="py-12 md:py-16 bg-gray-100">
+            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
+                <div class="flex flex-col md:flex-row gap-8">
+                    <div class="w-full md:w-1/2 bg-primary text-white p-6 md:p-8 rounded-lg relative">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6">Client Testimonials</h2>
+                        <div id="testimonialContent" class="mb-4">
+                            <!-- Testimonial content will be dynamically inserted here -->
+                        </div>
+                        <div class="absolute bottom-4 right-4 flex space-x-2">
+                            <button id="prevTestimonial" class="bg-white text-primary p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
+                            <button id="nextTestimonial" class="bg-white text-primary p-2 rounded-full">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                </svg>
+                            </button>
                         </div>
                     </div>
+                    <div class="w-full md:w-1/2 bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col justify-center items-center text-center">
+                        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-primary">Tell us what you need!</h2>
+                        <p class="mb-6 text-gray-600 text-sm md:text-base">
+                            We'll reach out to you with seamless solutions
+                            <br>
+                            and virtual high-fives! Not spam.
+                        </p>
+                        <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg">
+                            Get in Touch
+                        </a>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="heardAbout">How did you hear about us:</label>
-                    <select id="heardAbout" name="heardAbout" required>
-                        <option value="">Please Choose an Option</option>
-                        <option value="search">Search Engine</option>
-                        <option value="social">Social Media</option>
-                        <option value="friend">Friend Referral</option>
-                        <option value="other">Other</option>
-                    </select>
-                </div>
-                <button type="submit">Get in Touch</button>
-            </form>
-        </div> <!-- Contact form section -->
-        
-        <div class="contact-section"> 
-            <h2 class="section-title">Tell us what you need!</h2>
-            <p>We'll reach out to you with seamless solutions and virtual high-fives! Not spam.</p>
-            <br>
-            <span>
-            <a href="contact.html" class="btn">Get in Touch </a>
-            </span>
-            
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-primary text-white py-6 md:py-8">
+        <div class="container mx-auto text-center px-4 md:px-8 max-w-7xl">
+            <p class="text-sm md:text-base">&copy; 2023 I2F Student Services. All rights reserved.</p>
         </div>
-        
-    
-    </section>
+    </footer>
 
-
-    
     <script>
-        // Header scroll effect
-        window.addEventListener('scroll', () => {
-            const header = document.getElementById('header');
-            if (window.scrollY > 100) {
-                header.classList.add('scrolled');
-            } else {
-                header.classList.remove('scrolled');
-            }
+        // Mobile menu toggle
+        const mobileMenuButton = document.getElementById('mobileMenuButton');
+        const  mobileMenu = document.getElementById('mobileMenu');
+
+        mobileMenuButton.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
         });
 
-        // Counter animation
-        function animateCounter(elementId, target, duration) {
-            let start = 0;
-            const element = document.getElementById(elementId);
-            const increment = target / (duration / 16);
-            const timer = setInterval(() => {
-                start += increment;
-                element.textContent = Math.floor(start);
-                if (start >= target) {
-                    clearInterval(timer);
-                    element.textContent = target;
-                }
-            }, 16);
-        }
-
-        // Start counter animations when the section is in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    animateCounter('studentCount', 254, 2000);
-                    animateCounter('cityCount', 5, 1000);
-                    observer.unobserve(entry.target);
-                }
-            });
-        }, { threshold: 0.5 });
-
-        observer.observe(document.querySelector('.counter'));
-
-        // Question card
-        
-
-        // Slider
-        const sliderContent = [
-            "Unparalleled Expertise",
-            "Personalized Guidance",
-            "Comprehensive Support",
-            "Cultural Integration",
-            "Career Development"
+        // Carousel data
+        const carouselSlides = [
+            {
+                title: "Studying in France",
+                text: "I2F can help you find the perfect university for you after assessing your needs & analyzing your profile. We also go a step ahead, and guide you with creating an iron-clad application for the university to help you secure admissions.",
+                image: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8ZnJlbmNoJTIwdW5pdmVyc2l0eXxlbnwwfHwwfHx8MA%3D%3D"
+            },
+            {
+                title: "Preparing Yourself For The Big Move",
+                text: "You can focus on your goodbyes and mental preparation for moving abroad, while I2F takes care of applying for your visa, helping you find accommodation and guide you with all the documentation necessary to start living in your home away from home.",
+                image: "https://images.unsplash.com/photo-1526772662000-3f88f10405ff?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8M3x8cGFja2luZyUyMHN1aXRjYXNlfGVufDB8fDB8fHww"
+            },
+            {
+                title: "Settling In",
+                text: "I2F will ensure that your settling in process is seamless by taking care of all your documentation needs like visa validation, social security and CAF while also providing you with a welcome package which includes creating a bank account, sim card and all other provisions that can make your student life easier.",
+                image: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8NHx8c3R1ZGVudHMlMjBzZXR0bGluZyUyMGlufGVufDB8fDB8fHww"
+            }
         ];
 
         let currentSlide = 0;
 
-        function changeSlide() {
-            currentSlide = (currentSlide + 1) % sliderContent.length;
-            const slider = document.getElementById('slider');
-            slider.innerHTML = `<div class="slide">${sliderContent[currentSlide]}</div>`;
+        function updateCarousel() {
+            const carouselContent = document.getElementById('carouselContent');
+            const slide = carouselSlides[currentSlide];
+            carouselContent.innerHTML = `
+                <div class="w-full md:w-1/2 mb-6 md:mb-0 md:pr-8">
+                    <img src="${slide.image}" alt="${slide.title}" class="rounded-lg shadow-lg object-cover w-full carousel-image">
+                </div>
+                <div class="w-full md:w-1/2">
+                    <h2 class="text-2xl md:text-3xl font-bold mb-2 text-primary">${slide.title}</h2>
+                    <div class="w-16 h-1 bg-secondary mb-4"></div>
+                    <p class="text-base md:text-lg text-gray-700 mb-6">${slide.text}</p>
+                    <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg">
+                        Learn More
+                    </a>
+                </div>
+            `;
         }
 
-        setInterval(changeSlide, 3000);
+        document.getElementById('prevSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide - 1 + carouselSlides.length) % carouselSlides.length;
+            updateCarousel();
+        });
 
-        // Testimonial slider
+        document.getElementById('nextSlide').addEventListener('click', () => {
+            currentSlide = (currentSlide + 1) % carouselSlides.length;
+            updateCarousel();
+        });
+
+        // Initialize carousel
+        updateCarousel();
+
+        // Testimonial data
         const testimonials = [
             {
-                text: "Their elite service transformed my transition to France into an extraordinary journey!",
-                author: "Priya S., MBA Student at HEC Paris"
-            },
-            {
-                text: "The personalized guidance I received was invaluable. They truly understand the nuances of relocating to France.",
-                author: "Rahul M., Doctoral Candidate at Sorbonne University"
+                text: "Navigating the complexities of finding accommodation was a daunting task for me, especially when all the communication and transaction were through online platforms. However, the support I received from I2F was invaluable. They addressed my concerns promptly and ensured that my move was as smooth as possible. I can very confidently say that I2F went above and beyond to make this experience as seamless as possible. Thank you I2F!",
+                author: "Kalamathi Sivasankar",
+                school: "IESEG School of Management"
             },
             {
                 text: "From visa applications to cultural integration, their comprehensive support exceeded all my expectations.",
-                author: "Anjali K., Engineering Student at École Polytechnique"
+                author: "Anjali K.",
+                school: "Engineering Student at École Polytechnique"
             }
         ];
 
         let currentTestimonial = 0;
 
-        function changeTestimonial() {
-            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
-            const slider = document.getElementById('testimonialSlider');
-            slider.innerHTML = `
-                <div class="testimonial-slide">
-                    <p>"${testimonials[currentTestimonial].text}"</p>
-                    <p>- ${testimonials[currentTestimonial].author}</p>
+        function updateTestimonial() {
+            const testimonialContent = document.getElementById('testimonialContent');
+            const testimonial = testimonials[currentTestimonial];
+            testimonialContent.innerHTML = `
+                <p class="italic mb-4 text-sm md:text-base">${testimonial.text}</p>
+                <div class="flex items-center">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                        <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd" />
+                    </svg>
+                    <div>
+                        <p class="font-semibold">${testimonial.author}</p>
+                        <p class="text-xs md:text-sm">${testimonial.school}</p>
+                    </div>
                 </div>
             `;
         }
 
-        setInterval(changeTestimonial, 5000);
-
-        // Carousel
-        const carousel = document.querySelector('.carousel');
-        const slides = document.querySelectorAll('.carousel-slide');
-        const prevBtn = document.querySelector('.carousel-btn-left');
-        const nextBtn = document.querySelector('.carousel-btn-right');
-        let currentIndex = 0;
-
-        function showSlide(index) {
-            carousel.style.transform = `translateX(-${index * 100}%)`;
-        }
-
-        prevBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex - 1 + slides.length) % slides.length;
-            showSlide(currentIndex);
+        document.getElementById('prevTestimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial - 1 + testimonials.length) % testimonials.length;
+            updateTestimonial();
         });
 
-        nextBtn.addEventListener('click', () => {
-            currentIndex = (currentIndex + 1) % slides.length;
-            showSlide(currentIndex);
+        document.getElementById('nextTestimonial').addEventListener('click', () => {
+            currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+            updateTestimonial();
         });
 
-        // Flashcards
-        const flashcards = document.querySelectorAll('.flashcard');
-        let currentFlashcard = 0;
-
-        function rotateFlashcards() {
-            flashcards.forEach((card, index) => {
-                if (index === currentFlashcard) {
-                    card.style.transform = 'translateX(0) scale(1)';
-                    card.style.zIndex = '3';
-                } else if (index === (currentFlashcard + 1) % flashcards.length) {
-                    card.style.transform = 'translateX(50px) scale(0.9)';
-                    card.style.zIndex = '2';
-                } else {
-                    card.style.transform = 'translateX(100px) scale(0.8)';
-                    card.style.zIndex = '1';
-                }
-            });
-        }
-
-        flashcards.forEach(card => {
-            card.addEventListener('click', () => {
-                currentFlashcard = (currentFlashcard + 1) % flashcards.length;
-                rotateFlashcards();
-            });
-        });
-
-        rotateFlashcards();
-
-        // Form submission
-        document.getElementById('contactForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            // Here you would typically send the form data to a server
-            alert('Thank you for your submission! We will contact you soon.');
-            this.reset();
-        });
+        // Initialize testimonial
+        updateTestimonial();
     </script>
-
 </body>
 </html>
