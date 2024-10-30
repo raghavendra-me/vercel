@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I2F Student Services</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;600;700&family=Muli:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@300;400;500;600;700&family=Muli:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
         h1, h2 {
             font-family: 'Playfair Display', serif;
@@ -27,7 +27,7 @@
         .nav-brand {
             font-family: 'Playfair Display', serif;
         }
-        .nav-menu {
+        .nav-menu, .nav-links {
             font-family: 'Poppins', sans-serif;
         }
 
@@ -76,7 +76,7 @@
                 <img src="white-logo.png" alt="I2F Logo" class="w-16 h-16">
                 <span class="text-xl md:text-2xl font-bold nav-brand">I2F Student Services</span>
             </div>
-            <nav class="hidden md:block">
+            <nav class="hidden md:block nav-links">
                 <ul class="flex space-x-6">
                     <li><a href="/" class="hover:text-secondary transition-colors duration-300">Home</a></li>
                     <li><a href="/service.html" class="hover:text-secondary transition-colors duration-300">Services</a></li>
@@ -90,7 +90,7 @@
                 </svg>
             </button>
         </div>
-        <nav id="mobileMenu" class="md:hidden mt-4 hidden nav-menu">
+        <nav id="mobileMenu" class="md:hidden mt-4 hidden nav-menu nav-links">
             <ul class="flex flex-col space-y-2">
                 <li><a href="/" class="block py-2 px-4 hover:bg-secondary transition-colors duration-300">Home</a></li>
                 <li><a href="/service.html" class="block py-2 px-4 hover:bg-secondary transition-colors duration-300">Services</a></li>
@@ -122,14 +122,14 @@
 
         <section class="py-8 md:py-12 bg-white">
             <div class="container mx-auto text-center px-4 md:px-8 max-w-7xl">
-                <p class="text-base md:text-lg lg:text-xl italic mb-2 text-secondary font-medium">
-                    "Friends in the same boat as you are not consultants. Consultants are never in the same boat as you.
+                <p class="text-base md:text-lg lg:text-xl text-secondary font-normal italic">
+                    Friends in the same boat as you are not consultants. Consultants are never in the same boat as you.
                 </p>
-                <p class="text-base md:text-lg lg:text-xl italic mb-2 text-secondary font-medium">
+                <p class="text-base md:text-lg lg:text-xl text-secondary font-normal italic">
                     Around 98% of students moving to France choose one and miss out on the other.
                 </p>
-                <p class="text-base md:text-lg lg:text-xl italic font-bold text-secondary">
-                    Be better. Choose both. Choose I2F"
+                <p class="text-base md:text-lg lg:text-xl text-secondary font-normal italic">
+                    Be better. Choose both. Choose I2F
                 </p>
             </div>
         </section>
@@ -163,7 +163,7 @@
                             <img src="illustration1.svg" alt="Step 1" class="absolute inset-0 w-full h-full object-contain">
                         </div>
                         <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
-                            1
+                            <span class="font-bold">1</span>
                         </div>
                         <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center steps-heading">Fill in the form and choose your required services</h3>
                     </div>
@@ -172,7 +172,7 @@
                             <img src="illustration2.svg" alt="Step 2" class="absolute inset-0 w-full h-full object-contain">
                         </div>
                         <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
-                            2
+                            <span class="font-bold">2</span>
                         </div>
                         <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center steps-heading">Discuss the requirements & submit necessary documents</h3>
                     </div>
@@ -181,7 +181,7 @@
                             <img src="illustration3.svg" alt="Step 3" class="absolute inset-0 w-full h-full object-contain">
                         </div>
                         <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
-                            3
+                            <span class="font-bold">3</span>
                         </div>
                         <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center steps-heading">Experience a hassle free journey from India to France!</h3>
                     </div>
@@ -209,7 +209,7 @@
                             </button>
                             <button id="nextTestimonial" class="bg-white text-primary p-2 rounded-full">
                                 <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1  1 0 01-1.414 0z" clip-rule="evenodd" />
                                 </svg>
                             </button>
                         </div>
@@ -221,7 +221,7 @@
                             <br>
                             and virtual high-fives! Not spam.
                         </p>
-                        <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg cta-button">
+                        <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8  md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg cta-button">
                             Get in Touch
                         </a>
                     </div>
@@ -248,17 +248,17 @@
         // Carousel data
         const carouselSlides = [
             {
-                title: "Studying in France",
+                title: "Studying in france",
                 text: "I2F can help you find the perfect university for you after assessing your needs & analyzing your profile. We also go a step ahead, and guide you with creating an iron-clad application for the university to help you secure admissions.",
                 image: "Studying in France.png"
             },
             {
-                title: "Preparing Yourself For The Big Move",
+                title: "Preparing yourself for the big move",
                 text: "You can focus on your goodbyes and mental preparation for moving abroad, while I2F takes care of applying for your visa, helping you find accommodation and guide you with all the documentation necessary to start living in your home away from home.",
                 image: "Preparing yourself for the big move.png"
             },
             {
-                title: "Settling In",
+                title: "Settling in",
                 text: "I2F will ensure that your settling in process is seamless by taking care of all your documentation needs like visa validation, social security and CAF while also providing you with a welcome package which includes creating a bank account, sim card and all other provisions that can make your student life easier.",
                 image: "Settling-in.png"
             }
@@ -297,14 +297,14 @@
         // Testimonial data
         const testimonials = [
             {
-                text: "Navigating the complexities of finding accommodation was a daunting task for me, especially when all the communication and transactions were through online platforms. However, the support I received from I2F was invaluable. They addressed my concerns promptly and ensured that my needs were met throughout the process. I am very satisfied with the level of service provided and appreciate their dedication to making this experience as seamless as possible. Thank you I2F!",
+                text: `"Navigating the complexities of finding accommodation was a daunting task for me, especially when all the communication and transactions were through online platforms. However, the support I received from I2F was invaluable. They addressed my concerns promptly and ensured that my needs were met throughout the process. I am very satisfied with the level of service provided and appreciate their dedication to making this experience as seamless as possible. Thank you I2F!"`,
                 author: "Kalamathi Sivasankar, IESEG School of Management",
                 school: "",
                 linkedin: "https://www.linkedin.com/in/kalamathi-sivasankar-10ba0b262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             },
             {
-                text: "I2F service was very quick to respond and service was provided really fast. I personally believe it was the best decision I took because the results were trustworthy. And the price was also pretty reasonable. Thank you so much I2F for providing us with an excellent service quality at a short time",
-                author: "Aashika Anil Joseph",
+                text: `"I2F service was very quick to respond and service was provided really fast. I personally believe it was the best decision I took because the results were trustworthy. And the price was also pretty reasonable. Thank you so much I2F for providing us with an excellent service quality at a short time"`,
+                author: "Aashika Anil Joseph, IESEG School of Management",
                 school: "",
                 linkedin: "https://www.linkedin.com/in/aashika-anil-joseph-416009281/"
             }

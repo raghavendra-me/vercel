@@ -25,6 +25,7 @@
             font-family: 'Poppins', sans-serif;
             font-size: 1rem;
             line-height: 1.7;
+            text-align: justify;
         }
 
         @media (max-width: 768px) {
@@ -39,7 +40,7 @@
         }
 
         .bg-primary {
-            background-color: #012e40;
+            background-color: #1d3c50;  /* Updated navbar color */
         }
 
         .bg-secondary {
@@ -54,8 +55,12 @@
             color: #19766b;
         }
 
+        .nav-link:hover {
+            color: #028476;  /* Updated hover color */
+        }
+
         .hover-bg-secondary:hover {
-            background-color: #19766b;
+            background-color: #028476;  /* Updated hover background color */
         }
 
         .transition-colors {
@@ -86,6 +91,7 @@
             font-family: 'Poppins', sans-serif;
             color: #000000;
             font-size: 1rem;
+            text-align: justify;
         }
 
         @media (max-width: 768px) {
@@ -101,6 +107,7 @@
             font-size: 1rem;
             line-height: 1.7;
             font-family: 'Poppins', sans-serif;
+            font-style: italic;
         }
 
         @media (max-width: 768px) {
@@ -145,10 +152,10 @@
             </div>
             <nav class="hidden md:block">
                 <ul class="flex space-x-6">
-                    <li><a href="/" class="hover:text-secondary transition-colors duration-300">Home</a></li>
-                    <li><a href="/service.html" class="hover:text-secondary transition-colors duration-300">Services</a></li>
-                    <li><a href="#" class="hover:text-secondary transition-colors duration-300">About Us</a></li>
-                    <li><a href="/contact.html" class="hover:text-secondary transition-colors duration-300">Contact</a></li>
+                    <li><a href="/" class="nav-link transition-colors duration-300">Home</a></li>
+                    <li><a href="/service.html" class="nav-link transition-colors duration-300">Services</a></li>
+                    <li><a href="#" class="nav-link transition-colors duration-300">About Us</a></li>
+                    <li><a href="/contact.html" class="nav-link transition-colors duration-300">Contact</a></li>
                 </ul>
             </nav>
             <button id="mobileMenuButton" class="md:hidden">
@@ -159,10 +166,10 @@
         </div>
         <nav id="mobileMenu" class="md:hidden mt-4 hidden nav-menu">
             <ul class="flex flex-col space-y-2">
-                <li><a href="/" class="block py-2 px-4 hover:bg-secondary transition-colors duration-300">Home</a></li>
-                <li><a href="/service.html" class="block py-2 px-4 hover:bg-secondary transition-colors duration-300">Services</a></li>
-                <li><a href="#" class="block py-2 px-4 hover:bg-secondary transition-colors duration-300">About Us</a></li>
-                <li><a href="/contact.html" class="block py-2 px-4 hover:bg-secondary transition-colors duration-300">Contact</a></li>
+                <li><a href="/" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Home</a></li>
+                <li><a href="/service.html" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Services</a></li>
+                <li><a href="#" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">About Us</a></li>
+                <li><a href="/contact.html" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -170,7 +177,7 @@
     <main class="flex-grow pt-24 md:pt-32">
         <div class="container mx-auto px-4 md:px-8 max-w-7xl">
             <section class="mb-12 md:mb-16">
-                <h1 class="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-primary">Who We Are</h1>
+                <h1 class="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12" style="color: #028476;">Who We Are</h1>
                 <div class="max-w-4xl mx-auto space-y-4 md:space-y-6 description-text">
                     <p>Think back to when you first decided to study abroad—the excitement, the possibilities, the thrill of a new beginning. But then reality hits: moving to a new country isn't just about classes and sightseeing. It's also about navigating a maze of practical steps: visa processing, opening a bank account, finding the right place to live, and getting set up with all the basics. Suddenly, those checklists get long, and everything feels a bit overwhelming.</p>
                     <p>That's where I2F comes in. We're a group of students who once stood exactly where you are now, feeling both the excitement and the worries. And we created I2F to be the friend we wish we had back then—the one who'd help make everything clearer, simpler, and a lot less intimidating. I2F pairs you with a student partner who's not just a guide but a peer who's been through it all. From choosing a SIM card to opening a bank account, we're here to help you get it done, step by step.</p>
@@ -178,9 +185,9 @@
             </section>
 
             <section class="mb-12 md:mb-16">
-                <h2 class="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-primary">Our Story</h2>
+                <h2 class="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-8" style="color: #028476;">Our Story</h2>
                 <div class="max-w-4xl mx-auto space-y-6 md:space-y-8">
-                    <p class="story-text">"Our journey to France started just like yours, filled with hope, but also a fair share of confusion and questions. We remember our own frantic Google searches, those "what do I do now?" moments, and the long lists of must-do tasks, which only seemed to grow as departure day got closer. And when we finally arrived? It was an adventure—but with more bumps than we expected. Figuring out bureaucracy, especially in French, was like solving a never-ending puzzle."</p>
+                    <p class="story-text">Our journey to France started just like yours, filled with hope, but also a fair share of confusion and questions. We remember our own frantic Google searches, those "what do I do now?" moments, and the long lists of must-do tasks, which only seemed to grow as departure day got closer. And when we finally arrived? It was an adventure—but with more bumps than we expected. Figuring out bureaucracy, especially in French, was like solving a never-ending puzzle.</p>
                     
                     <p class="story-text">After stumbling through it ourselves, we realized that there had to be a better way. We wanted support that wasn't overly formal or expensive—someone who understood the small specific things only a student would know. More than anything, we wished for someone who'd been in our shoes, who could guide us like a friend rather than a service.</p>
                     
@@ -198,12 +205,14 @@
                 <p class="text-lg md:text-xl">"Every client we get is a new friend, cause we've been there"</p>
             </div>
 
-            <section class="bg-primary text-white py-12 md:py-16 px-4 rounded-lg text-center mb-12 md:mb-16">
-                <h2 class="text-2xl md:text-4xl font-bold mb-4">Ready to start your journey?</h2>
-                <p class="mb-6 md:mb-8 italic description-text">Let us help you get from India to France with ease & confidence.</p>
-                <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg cta-button">
-                    GET IN TOUCH!
-                </a>
+            <section class="bg-primary text-white py-12 md:py-16 px-4 rounded-lg mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4 text-center">Ready to start your journey?</h2>
+                <p class="mb-6 md:mb-8 italic text-center">Let us help you get from India to France with ease & confidence.</p>
+                <div class="text-center">
+                    <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg cta-button">
+                        GET IN TOUCH!
+                    </a>
+                </div>
             </section>
         </div>
     </main>
