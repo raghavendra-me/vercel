@@ -27,6 +27,13 @@
             line-height: 1.7;
         }
 
+        @media (max-width: 768px) {
+            .description-text {
+                font-size: 0.875rem;
+                line-height: 1.6;
+            }
+        }
+
         .cta-button {
             font-family: 'Montserrat', sans-serif;
         }
@@ -66,12 +73,26 @@
             font-style: italic;
         }
 
+        @media (max-width: 768px) {
+            .quote-box {
+                padding: 1.5rem;
+                margin: 0.75rem 0;
+            }
+        }
+
         .story-text {
             font-style: italic;
             line-height: 1.8;
             font-family: 'Poppins', sans-serif;
             color: #000000;
             font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            .story-text {
+                font-size: 0.875rem;
+                line-height: 1.6;
+            }
         }
 
         .adventure-text {
@@ -81,14 +102,46 @@
             line-height: 1.7;
             font-family: 'Poppins', sans-serif;
         }
+
+        @media (max-width: 768px) {
+            .adventure-text {
+                font-size: 0.875rem;
+                line-height: 1.6;
+                margin-bottom: 0.75rem;
+            }
+
+            section {
+                margin-bottom: 2rem !important;
+                padding-top: 1.5rem !important;
+                padding-bottom: 1.5rem !important;
+            }
+
+            h1 {
+                font-size: 1.875rem !important;
+                margin-bottom: 1.5rem !important;
+            }
+
+            h2 {
+                font-size: 1.5rem !important;
+                margin-bottom: 1rem !important;
+            }
+
+            .space-y-6 > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 1rem !important;
+            }
+
+            .space-y-8 > :not([hidden]) ~ :not([hidden]) {
+                margin-top: 1.25rem !important;
+            }
+        }
     </style>
 </head>
 <body class="min-h-screen flex flex-col font-sans">
     <header class="bg-primary text-white p-4 fixed w-full z-50">
         <div class="container mx-auto flex justify-between items-center px-4 md:px-8 max-w-7xl">
             <div class="flex items-center space-x-2">
-                <img src="white-logo.png" alt="I2F Logo" class="w-16 h-16">
-                <span class="text-xl md:text-2xl font-bold nav-brand">I2F Student Services</span>
+                <img src="white-logo.png" alt="I2F Logo" class="w-12 h-12 md:w-16 md:h-16">
+                <span class="text-lg md:text-2xl font-bold nav-brand">I2F Student Services</span>
             </div>
             <nav class="hidden md:block">
                 <ul class="flex space-x-6">
@@ -114,19 +167,19 @@
         </nav>
     </header>
 
-    <main class="flex-grow pt-32">
+    <main class="flex-grow pt-24 md:pt-32">
         <div class="container mx-auto px-4 md:px-8 max-w-7xl">
-            <section class="mb-16">
-                <h1 class="text-4xl md:text-5xl font-bold text-center mb-12 text-primary">Who We Are</h1>
-                <div class="max-w-4xl mx-auto space-y-6 description-text">
+            <section class="mb-12 md:mb-16">
+                <h1 class="text-3xl md:text-5xl font-bold text-center mb-8 md:mb-12 text-primary">Who We Are</h1>
+                <div class="max-w-4xl mx-auto space-y-4 md:space-y-6 description-text">
                     <p>Think back to when you first decided to study abroad—the excitement, the possibilities, the thrill of a new beginning. But then reality hits: moving to a new country isn't just about classes and sightseeing. It's also about navigating a maze of practical steps: visa processing, opening a bank account, finding the right place to live, and getting set up with all the basics. Suddenly, those checklists get long, and everything feels a bit overwhelming.</p>
                     <p>That's where I2F comes in. We're a group of students who once stood exactly where you are now, feeling both the excitement and the worries. And we created I2F to be the friend we wish we had back then—the one who'd help make everything clearer, simpler, and a lot less intimidating. I2F pairs you with a student partner who's not just a guide but a peer who's been through it all. From choosing a SIM card to opening a bank account, we're here to help you get it done, step by step.</p>
                 </div>
             </section>
 
-            <section class="mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 text-primary">Our Story</h2>
-                <div class="max-w-4xl mx-auto space-y-8">
+            <section class="mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-4xl font-bold text-center mb-6 md:mb-8 text-primary">Our Story</h2>
+                <div class="max-w-4xl mx-auto space-y-6 md:space-y-8">
                     <p class="story-text">"Our journey to France started just like yours, filled with hope, but also a fair share of confusion and questions. We remember our own frantic Google searches, those "what do I do now?" moments, and the long lists of must-do tasks, which only seemed to grow as departure day got closer. And when we finally arrived? It was an adventure—but with more bumps than we expected. Figuring out bureaucracy, especially in French, was like solving a never-ending puzzle."</p>
                     
                     <p class="story-text">After stumbling through it ourselves, we realized that there had to be a better way. We wanted support that wasn't overly formal or expensive—someone who understood the small specific things only a student would know. More than anything, we wished for someone who'd been in our shoes, who could guide us like a friend rather than a service.</p>
@@ -135,29 +188,29 @@
                 </div>
             </section>
 
-            <div class="text-center mb-16 max-w-3xl mx-auto">
-                <p class="text-xl italic mb-4 description-text">"With I2F, you're not just getting a service; you're getting a friend who understands what it's like to start fresh in a new country."</p>
+            <div class="text-center mb-12 md:mb-16 max-w-3xl mx-auto">
+                <p class="text-lg md:text-xl italic mb-4 description-text">"With I2F, you're not just getting a service; you're getting a friend who understands what it's like to start fresh in a new country."</p>
             </div>
 
             <p class="adventure-text">We're here to make sure you're not just prepared but truly ready for this exciting adventure ahead!</p>
 
             <div class="quote-box">
-                <p class="text-xl">"Every client we get is a new friend, cause we've been there"</p>
+                <p class="text-lg md:text-xl">"Every client we get is a new friend, cause we've been there"</p>
             </div>
 
-            <section class="bg-primary text-white py-16 px-4 rounded-lg text-center mb-16">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Ready to start your journey?</h2>
-                <p class="mb-8 italic description-text">Let us help you get from India to France with ease & confidence.</p>
-                <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-8 py-3 rounded-full text-lg inline-block transition-all duration-300 hover:shadow-lg cta-button">
+            <section class="bg-primary text-white py-12 md:py-16 px-4 rounded-lg text-center mb-12 md:mb-16">
+                <h2 class="text-2xl md:text-4xl font-bold mb-4">Ready to start your journey?</h2>
+                <p class="mb-6 md:mb-8 italic description-text">Let us help you get from India to France with ease & confidence.</p>
+                <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg cta-button">
                     GET IN TOUCH!
                 </a>
             </section>
         </div>
     </main>
 
-    <footer class="bg-primary text-white py-6 md:py-8">
+    <footer class="bg-primary text-white py-4 md:py-8">
         <div class="container mx-auto text-center px-4 md:px-8 max-w-7xl">
-            <p class="text-sm md:text-base">&copy; 2023 I2F Student Services. All rights reserved.</p>
+            <p class="text-xs md:text-base">&copy; 2023 I2F Student Services. All rights reserved.</p>
         </div>
     </footer>
 
@@ -168,6 +221,20 @@
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!mobileMenuButton.contains(event.target) && !mobileMenu.contains(event.target)) {
+                mobileMenu.classList.add('hidden');
+            }
+        });
+
+        // Close mobile menu when window is resized to desktop view
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 768) {
+                mobileMenu.classList.add('hidden');
+            }
         });
     </script>
 </body>
