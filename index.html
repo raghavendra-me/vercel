@@ -5,11 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>I2F Student Services</title>
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Poppins:wght@400;500;600;700&family=Muli:wght@400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+        h1, h2 {
+            font-family: 'Playfair Display', serif;
+            text-transform: capitalize;
+        }
 
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .steps-heading {
+            font-family: 'Muli', sans-serif;
+        }
+
+        .cta-button {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .nav-brand {
+            font-family: 'Playfair Display', serif;
+        }
+        .nav-menu {
+            font-family: 'Poppins', sans-serif;
         }
 
         .bg-primary {
@@ -55,14 +74,14 @@
         <div class="container mx-auto flex justify-between items-center px-4 md:px-8 max-w-7xl">
             <div class="flex items-center space-x-2">
                 <img src="white-logo.png" alt="I2F Logo" class="w-16 h-16">
-                <span class="text-xl md:text-2xl font-bold">I2F Student Services</span>
+                <span class="text-xl md:text-2xl font-bold nav-brand">I2F Student Services</span>
             </div>
             <nav class="hidden md:block">
                 <ul class="flex space-x-6">
-                    <li><a href="#" class="hover:text-secondary transition-colors duration-300">Home</a></li>
-                    <li><a href="service.html" class="hover:text-secondary transition-colors duration-300">Services</a></li>
-                    <li><a href="" class="hover:text-secondary transition-colors duration-300">About Us</a></li>
-                    <li><a href="contact.html" class="hover:text-secondary transition-colors duration-300">Contact</a></li>
+                    <li><a href="/" class="hover:text-secondary transition-colors duration-300">Home</a></li>
+                    <li><a href="/service.html" class="hover:text-secondary transition-colors duration-300">Services</a></li>
+                    <li><a href="about.html" class="hover:text-secondary transition-colors duration-300">About Us</a></li>
+                    <li><a href="/contact.html" class="hover:text-secondary transition-colors duration-300">Contact</a></li>
                 </ul>
             </nav>
             <button id="mobileMenuButton" class="md:hidden">
@@ -71,12 +90,12 @@
                 </svg>
             </button>
         </div>
-        <nav id="mobileMenu" class="md:hidden mt-4 hidden">
+        <nav id="mobileMenu" class="md:hidden mt-4 hidden nav-menu">
             <ul class="flex flex-col space-y-2">
-                <li><a href="#" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Home</a></li>
-                <li><a href="service.html" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Services</a></li>
-                <li><a href="" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">About Us</a></li>
-                <li><a href="contact.html" class="block py-2 px-4 hover-bg-secondary transition-colors duration-300">Contact</a></li>
+                <li><a href="/" class="block py-2 px-4 hover:bg-secondary transition-colors duration-300">Home</a></li>
+                <li><a href="/service.html" class="block py-2 px-4 hover:bg-secondary transition-colors duration-300">Services</a></li>
+                <li><a href="about.html" class="block py-2 px-4 hover:bg-secondary transition-colors duration-300">About Us</a></li>
+                <li><a href="/contact.html" class="block py-2 px-4 hover:bg-secondary transition-colors duration-300">Contact</a></li>
             </ul>
         </nav>
     </header>
@@ -95,7 +114,7 @@
                     TO AN EASIER WAY TO OPEN A BANK ACCOUNT, I2F CAN HELP YOU!
                 </p>
                 <br>
-                <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg">
+                <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg cta-button">
                     BEGIN YOUR JOURNEY
                 </a>
             </div>
@@ -104,13 +123,13 @@
         <section class="py-8 md:py-12 bg-white">
             <div class="container mx-auto text-center px-4 md:px-8 max-w-7xl">
                 <p class="text-base md:text-lg lg:text-xl italic mb-2 text-secondary font-medium">
-                    "Friends in the same boat as you are not consultants. Consultants are never in the same boat as you."
+                    "Friends in the same boat as you are not consultants. Consultants are never in the same boat as you.
                 </p>
                 <p class="text-base md:text-lg lg:text-xl italic mb-2 text-secondary font-medium">
                     Around 98% of students moving to France choose one and miss out on the other.
                 </p>
                 <p class="text-base md:text-lg lg:text-xl italic font-bold text-secondary">
-                    Be better. Choose both. Choose I2F
+                    Be better. Choose both. Choose I2F"
                 </p>
             </div>
         </section>
@@ -146,7 +165,7 @@
                         <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
                             1
                         </div>
-                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center">Fill in the form and choose your required services</h3>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center steps-heading">Fill in the form and choose your required services</h3>
                     </div>
                     <div class="text-center flex flex-col items-center">
                         <div class="w-48 h-48 mb-4 relative">
@@ -155,7 +174,7 @@
                         <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
                             2
                         </div>
-                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center">Discuss the requirements & submit necessary documents</h3>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center steps-heading">Discuss the requirements & submit necessary documents</h3>
                     </div>
                     <div class="text-center flex flex-col items-center">
                         <div class="w-48 h-48 mb-4 relative">
@@ -164,7 +183,7 @@
                         <div class="bg-primary text-white w-10 h-10 rounded-full flex items-center justify-center mb-4">
                             3
                         </div>
-                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center">Experience a hassle free journey from India to France!</h3>
+                        <h3 class="text-lg md:text-xl font-semibold text-primary h-20 flex items-center justify-center steps-heading">Experience a hassle free journey from India to France!</h3>
                     </div>
                 </div>
                 <p class="text-center mt-8 md:mt-12 text-base md:text-lg italic text-gray-600">
@@ -202,7 +221,7 @@
                             <br>
                             and virtual high-fives! Not spam.
                         </p>
-                        <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg">
+                        <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg cta-button">
                             Get in Touch
                         </a>
                     </div>
@@ -211,7 +230,7 @@
         </section>
     </main>
 
-    <footer class="bg-primary text-white py-6 md:py-8">
+    <footer  class="bg-primary text-white py-6 md:py-8">
         <div class="container mx-auto text-center px-4 md:px-8 max-w-7xl">
             <p class="text-sm md:text-base">&copy; 2023 I2F Student Services. All rights reserved.</p>
         </div>
@@ -220,7 +239,7 @@
     <script>
         // Mobile menu toggle
         const mobileMenuButton = document.getElementById('mobileMenuButton');
-        const  mobileMenu = document.getElementById('mobileMenu');
+        const mobileMenu = document.getElementById('mobileMenu');
 
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
@@ -258,7 +277,6 @@
                     <h2 class="text-2xl md:text-3xl font-bold mb-2 text-primary">${slide.title}</h2>
                     <div class="w-16 h-1 bg-secondary mb-4"></div>
                     <p class="text-base md:text-lg text-gray-700 mb-6">${slide.text}</p>
-                    
                 </div>
             `;
         }
@@ -279,14 +297,16 @@
         // Testimonial data
         const testimonials = [
             {
-                text: "Navigating the complexities of finding accommodation was a daunting task for me, especially when all the communication and transaction were through online platforms. However, the support I received from I2F was invaluable. They addressed my concerns promptly and ensured that my move was as smooth as possible. I can very confidently say that I2F went above and beyond to make this experience as seamless as possible. Thank you I2F!",
-                author: "Kalamathi Sivasankar",
-                school: "IESEG School of Management"
+                text: "Navigating the complexities of finding accommodation was a daunting task for me, especially when all the communication and transactions were through online platforms. However, the support I received from I2F was invaluable. They addressed my concerns promptly and ensured that my needs were met throughout the process. I am very satisfied with the level of service provided and appreciate their dedication to making this experience as seamless as possible. Thank you I2F!",
+                author: "Kalamathi Sivasankar, IESEG School of Management",
+                school: "",
+                linkedin: "https://www.linkedin.com/in/kalamathi-sivasankar-10ba0b262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
             },
             {
-                text: "From visa applications to cultural integration, their comprehensive support exceeded all my expectations.",
-                author: "Anjali K.",
-                school: "Engineering Student at École Polytechnique"
+                text: "I2F service was very quick to respond and service was provided really fast. I personally believe it was the best decision I took because the results were trustworthy. And the price was also pretty reasonable. Thank you so much I2F for providing us with an excellent service quality at a short time",
+                author: "Aashika Anil Joseph",
+                school: "",
+                linkedin: "https://www.linkedin.com/in/aashika-anil-joseph-416009281/"
             }
         ];
 
@@ -298,9 +318,11 @@
             testimonialContent.innerHTML = `
                 <p class="italic mb-4 text-sm md:text-base">${testimonial.text}</p>
                 <div class="flex items-center">
-                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
-                        <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd" />
-                    </svg>
+                    <a href="${testimonial.linkedin}" target="_blank" rel="noopener noreferrer">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M16.338 16.338H13.67V12.16c0-.995-.017-2.277-1.387-2.277-1.39 0-1.601 1.086-1.601 2.207v4.248H8.014v-8.59h2.559v1.174h.037c.356-.675 1.227-1.387 2.526-1.387 2.703 0 3.203 1.778 3.203 4.092v4.711zM5.005 6.575a1.548 1.548 0 11-.003-3.096 1.548 1.548 0 01.003 3.096zm-1.337 9.763H6.34v-8.59H3.667v8.59zM17.668 1H2.328C1.595 1 1 1.581 1 2.298v15.403C1 18.418 1.595 19 2.328 19h15.34c.734 0 1.332-.582 1.332-1.299V2.298C19 1.581 18.402 1 17.668 1z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
                     <div>
                         <p class="font-semibold">${testimonial.author}</p>
                         <p class="text-xs md:text-sm">${testimonial.school}</p>
