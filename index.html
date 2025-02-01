@@ -122,11 +122,11 @@
 
         <section class="py-8 md:py-12 bg-white" aria-label="Mission Statement">
             <div class="container mx-auto text-center px-4 md:px-8 max-w-7xl">
-                <blockquote class="text-base md:text-lg lg:text-xl text-secondary font-normal italic">
-                    <p>Friends in the same boat as you are not consultants. Consultants are never in the same boat as you.</p>
-                    <p>Around 98% of students moving to France choose one and miss out on the other.</p>
-                    <p>Be better. Choose both. Choose I2F</p>
-                </blockquote>
+                <blockquote class="text-base md:text-lg lg:text-xl text-secondary font-normal italic flex flex-col items-start max-w-4xl mx-auto">
+                    <p class="mb-6">« Friends in the same boat as you are not consultants. Consultants are never in the same boat as you »</p>
+                    <p>I2F Student Services specializes in providing end-to-end support for Indian students aspiring to study in France. From personalized course selection and university applications to visa assistance, housing, and cultural integration, we help simplify your transition to a new life abroad.</p>
+                </blockquote>  
+                
             </div>
         </section>
 
@@ -293,19 +293,63 @@
 
         // Testimonial data
         const testimonials = [
-            {
-                text: `"Navigating the complexities of finding accommodation was a daunting task for me, especially when all the communication and transactions were through online platforms. However, the support I received from I2F was invaluable. They addressed my concerns promptly and ensured that my needs were met throughout the process. I am very satisfied with the level of service provided and appreciate their dedication to making this experience as seamless as possible. Thank you I2F!"`,
-                author: "Kalamathi Sivasankar, IESEG School of Management",
-                school: "",
-                linkedin: "https://www.linkedin.com/in/kalamathi-sivasankar-10ba0b262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
-            },
-            {
-                text: `"I2F service was very quick to respond and service was provided really fast. I personally believe it was the best decision I took because the results were trustworthy. And the price was also pretty reasonable. Thank you so much I2F for providing us with an excellent service quality at a short time"`,
-                author: "Aashika Anil Joseph, IESEG School of Management",
-                school: "",
-                linkedin: "https://www.linkedin.com/in/aashika-anil-joseph-416009281/"
-            }
-        ];
+    {
+        text: `"Navigating the complexities of finding accommodation was a daunting task for me, especially when all the communication and transactions were through online platforms. However, the support I received from I2F was invaluable. They addressed my concerns promptly and ensured that my needs were met throughout the process. I am very satisfied with the level of service provided and appreciate their dedication to making this experience as seamless as possible. Thank you I2F!"`,
+        author: "Kalamathi Sivasankar",
+        school: "IESEG School of Management",
+        city: "Lille",
+        linkedin: "https://www.linkedin.com/in/kalamathi-sivasankar-10ba0b262?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    },
+    {
+        text: `"I2F service was very quick to respond and service was provided really fast. I personally believe it was the best decision I took because the results were trustworthy. And the price was also pretty reasonable. Thank you so much I2F for providing us with an excellent service quality at a short time"`,
+        author: "Aashika Anil Joseph",
+        school: "IESEG School of Management",
+        city: "Lille",
+        linkedin: "https://www.linkedin.com/in/aashika-anil-joseph-416009281/"
+    },
+    {
+        text: `"Hello! I wanted to extend my sincere gratitude to Rajesh and Shalini at I2F Student Services for their exceptional support. Rajesh played a crucial role in helping me secure comfortable and affordable accommodation in France. His dedication and attention to detail made the entire process smooth and stress-free. Shalini's guidance during the Visale process was equally invaluable. She ensured I had all the necessary documents and helped me navigate the system with ease. Her expertise and willingness to assist at every step gave me great confidence. Thank you both for your incredible support. I highly recommend I2F Student Services to any student moving to France!"`,
+        author: "Lakshmi Prasanna Illa",
+        school: "College de Paris",
+        city: "Paris",
+        linkedin: "https://www.linkedin.com/in/lakshmi-prasanna-illa?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    },
+    {
+        text: `"Hello! A big thank you to Rajesh and Shalini for their fantastic support during my move to France. Rajesh's help in arranging my accommodation was outstanding – he found great options that fit my budget perfectly, and the process was handled with great professionalism. Shalini made sure the Visale application process was smooth and straightforward. Her attention to detail ensured that everything was completed on time without any issues. I truly appreciated her dedication and support throughout the process. I highly recommend I2F Student Services, and I'm grateful for all the hard work Rajesh and Shalini put into making this experience seamless."`,
+        author: "Prasanth Kumar Illa",
+        school: "EPITA",
+        city: "Paris",
+        linkedin: "http://www.linkedin.com/in/illa-prasanth-kumar-53b5a0321"
+    },
+    {
+        text: `"Hello! I'd like to take a moment to appreciate Rajesh and Shalini for their incredible assistance during my transition to France. Rajesh was instrumental in helping me find suitable accommodation, ensuring that the place met all my requirements. His professionalism and friendly approach made the experience pleasant. Shalini's support during the Visale process was extremely helpful. She guided me through each step and made sure everything was submitted accurately and on time. Her patience and willingness to help made a big difference. Thank you, Rajesh and Shalini, for your hard work and dedication. I wholeheartedly recommend I2F Student Services to anyone planning their move to France."`,
+        author: "Nava Raja",
+        school: "EPITA",
+        city: "Paris",
+        linkedin: "https://www.linkedin.com/in/navaraja-mannepalli?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+    },
+    {
+        text: `"I'm grateful to I2F Student Services for helping me find my perfect accommodation. A special thanks to Rajesh for his exceptional support throughout the entire process, he made everything seamless and stress-free. The team's attention to detail, and commitment to understanding my needs were impressive. They went above and beyond to help me find a place that truly feels like home, so I highly recommend i2f services for accommodation needs."`,
+        author: "Akula Bhargavi",
+        school: "EPITA",
+        city: "Paris",
+        linkedin: "https://www.linkedin.com/in/akula-bhargavi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+    },
+    {
+        text: `"I am extremely happy and grateful for the services delivered by I2F regarding my Visa journey to France. I was worried about the documentation process initially, but finished it successfully with their help. I would heartfully recommend any student to consider their proficiency for the assistance in abroad studies, as I gained knowledge and expertise guidance during my process. Thank you so much for everything!"`,
+        author: "Onteddu Spandana",
+        school: "NEOMA School of Business",
+        city: "Paris",
+        linkedin: "https://www.linkedin.com/in/spandana09?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app"
+    },
+    {
+        text: `"Raj is highly cooperative and deeply committed to assisting individuals with the application process. He is eager to share valuable insights on various topics and demonstrates exceptional patience when addressing questions."`,
+        author: "Jaya Saikishore",
+        school: "Data Science Tech Institute",
+        city: "Paris",
+        linkedin: "https://www.linkedin.com/in/jaya-sai-kishore-8ba408303?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+    }
+];
 
         let currentTestimonial = 0;
 
