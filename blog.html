@@ -83,68 +83,32 @@
 
     <main class="flex-grow pt-24 bg-gray-100">
         <div class="container mx-auto px-4 md:px-8 max-w-7xl py-8">
-            <h1 class="text-4xl md:text-5xl font-bold text-primary mb-8 text-center">I2F Student Services Blog</h1>
+            <h1 class="text-4xl md:text-5xl font-bold text-primary text-center">I2F Student Services Blog</h1>
             
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <!-- Blog Post 1 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="assets/newimage.png" alt="Blog post image" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-semibold text-primary mb-2">Navigating French University Applications</h2>
-                        <p class="text-gray-600 mb-4">Learn the ins and outs of applying to French universities as an international student.</p>
-                        <a href="blogpost.html" class="text-secondary hover:text-primary transition-colors duration-300">Read More →</a>
+            <div class="pt-16 px-4 md:px-8 max-w-7xl mx-auto">
+                <!-- Search Section -->
+                <div class="mb-8">
+                    <div class="max-w-xl mx-auto">
+                        <div class="relative">
+                            <input 
+                                type="text" 
+                                id="searchInput"
+                                placeholder="Search blog posts..."
+                                class="w-full px-4 py-2 pl-10 pr-4 text-gray-700 bg-white border border-gray-300 rounded-lg focus:outline-none focus:border-secondary focus:ring-1 focus:ring-secondary"
+                            >
+                            <div class="absolute inset-y-0 left-0 flex items-center pl-3">
+                                <svg class="w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                </svg>
+                            </div>
+                        </div>
                     </div>
-                </article>
+                </div>
 
-                <!-- Blog Post 2 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="assets/new02.png" alt="Blog post image" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-semibold text-primary mb-2">Top 5 Scholarships for Indian Students in France</h2>
-                        <p class="text-gray-600 mb-4">Discover the best scholarship opportunities for Indian students looking to study in France.</p>
-                        <a href="blogpost.html" class="text-secondary hover:text-primary transition-colors duration-300">Read More →</a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 3 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="assets/new03.png" alt="Blog post image" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-semibold text-primary mb-2">Life as an International Student in Lille</h2>
-                        <p class="text-gray-600 mb-4">Get a glimpse into the daily life and experiences of international students in Lille, France.</p>
-                        <a href="blogpost.html" class="text-secondary hover:text-primary transition-colors duration-300">Read More →</a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 4 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="assets/new02.png" alt="Blog post image" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-semibold text-primary mb-2">French Language Tips for Beginners</h2>
-                        <p class="text-gray-600 mb-4">Essential French phrases and learning strategies for international students new to the language.</p>
-                        <a href="blogpost.html" class="text-secondary hover:text-primary transition-colors duration-300">Read More →</a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 5 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="assets/new03.png" alt="Blog post image" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-semibold text-primary mb-2">Budgeting for Your French Education</h2>
-                        <p class="text-gray-600 mb-4">Learn how to manage your finances and budget effectively as a student in France.</p>
-                        <a href="blogpost.html" class="text-secondary hover:text-primary transition-colors duration-300">Read More →</a>
-                    </div>
-                </article>
-
-                <!-- Blog Post 6 -->
-                <article class="bg-white rounded-lg shadow-md overflow-hidden">
-                    <img src="assets/new03.png" alt="Blog post image" class="w-full h-48 object-cover">
-                    <div class="p-6">
-                        <h2 class="text-2xl font-semibold text-primary mb-2">Cultural Adjustment: India to France</h2>
-                        <p class="text-gray-600 mb-4">Tips and experiences on adapting to French culture for Indian students studying abroad.</p>
-                        <a href="blogpost.html" class="text-secondary hover:text-primary transition-colors duration-300">Read More →</a>
-                    </div>
-                </article>
+                <!-- Blog Posts Container -->
+                <div id="blogPosts" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    <!-- Blog posts will be dynamically inserted here -->
+                </div>
             </div>
 
             <!-- Pagination -->
@@ -252,6 +216,103 @@
         document.getElementById('mobileMenuButton').addEventListener('click', function() {
             document.getElementById('mobileMenu').classList.toggle('hidden');
         });
+
+        // Sample blog posts data (replace with your actual blog posts)
+        const blogPosts = [
+            {
+                title: "Guide to French Student Visa Application",
+                excerpt: "Learn about the step-by-step process of applying for a French student visa...",
+                category: "Visa",
+                date: "2024-03-15",
+                image: "assets/newimage.png",
+                link: "blogpost.html"
+            },
+            {
+                title: "Top Universities in France for International Students",
+                excerpt: "Discover the best French universities welcoming international students...",
+                category: "Education",
+                date: "2024-03-10",
+                image: "assets/new02.png",
+                link: "/blog/top-french-universities"
+            },{
+                title: "Finding Friends in France",
+                excerpt: "Learn about the step-by-step process of applying for a French student visa...",
+                category: "Visa",
+                date: "2024-03-15",
+                image: "assets/new03.png",
+                link: "blogpost.html"
+            },
+            {
+                title: "Connecting to the communities of your Country",
+                excerpt: "Learn about the step-by-step process of applying for a French student visa...",
+                category: "Visa",
+                date: "2024-03-15",
+                image: "assets/newimage.png",
+                link: "blogpost.html"
+            },
+            {
+                title: "Top Universities in France for International Students",
+                excerpt: "Discover the best French universities welcoming international students...",
+                category: "Education",
+                date: "2024-03-10",
+                image: "assets/new02.png",
+                link: "/blog/top-french-universities"
+            },{
+                title: "Guide to French Student Visa Application",
+                excerpt: "Learn about the step-by-step process of applying for a French student visa...",
+                category: "Visa",
+                date: "2024-03-15",
+                image: "assets/new03.png",
+                link: "blogpost.html"
+            },
+            
+            
+            // Add more blog posts here
+        ];
+
+        // Function to create a blog post card
+        function createBlogCard(post) {
+            return `
+                <article class="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow duration-300">
+                    <img src="${post.image}" alt="${post.title}" class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <div class="flex items-center mb-2">
+                            <span class="text-sm text-secondary font-medium">${post.category}</span>
+                            <span class="mx-2 text-gray-300">•</span>
+                            <span class="text-sm text-gray-500">${new Date(post.date).toLocaleDateString()}</span>
+                        </div>
+                        <h2 class="text-xl font-semibold mb-2 text-gray-800">${post.title}</h2>
+                        <p class="text-gray-600 mb-4">${post.excerpt}</p>
+                        <a href="${post.link}" class="text-secondary hover:text-primary transition-colors duration-300 font-medium">
+                            Read More →
+                        </a>
+                    </div>
+                </article>
+            `;
+        }
+
+        // Function to render blog posts
+        function renderBlogPosts(posts) {
+            const container = document.getElementById('blogPosts');
+            container.innerHTML = posts.map(post => createBlogCard(post)).join('');
+        }
+
+        // Function to filter blog posts
+        function filterBlogPosts(searchTerm) {
+            const filteredPosts = blogPosts.filter(post => {
+                const searchString = `${post.title} ${post.excerpt} ${post.category}`.toLowerCase();
+                return searchString.includes(searchTerm.toLowerCase());
+            });
+            renderBlogPosts(filteredPosts);
+        }
+
+        // Add search input event listener
+        document.getElementById('searchInput').addEventListener('input', (e) => {
+            filterBlogPosts(e.target.value);
+        });
+
+        // Initial render
+        renderBlogPosts(blogPosts);
     </script>
 </body>
 </html>
