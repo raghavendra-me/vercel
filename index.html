@@ -132,6 +132,30 @@
             </div>
         </section>
 
+        <section class="py-12 md:py-16 bg-gray-100" aria-labelledby="testimonials-heading">
+        <div class="max-w-5xl mx-auto px-4">
+            <div class="bg-primary text-white p-6 md:p-8 rounded-lg">
+            <h2 id="testimonials-heading" class="text-center text-2xl md:text-3xl font-bold mb-6">Client Testimonials</h2>
+            <div id="testimonialContent" class="mb-4" aria-live="polite">
+                <!-- Testimonial content will be dynamically inserted here -->
+            </div>
+            <div class="flex justify-end space-x-2">
+                <button id="prevTestimonial" class="bg-white text-primary p-2 rounded-full" aria-label="Previous testimonial">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
+                </svg>
+                </button>
+                <button id="nextTestimonial" class="bg-white text-primary p-2 rounded-full" aria-label="Next testimonial">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
+                </svg>
+                </button>
+            </div>
+            </div>
+        </div>
+        </section>
+
+
         <section class="py-8 md:py-12 bg-white" aria-label="Mission Statement">
             <div class="container mx-auto text-center px-4 md:px-8 max-w-7xl">
                 <blockquote class="text-base md:text-lg lg:text-xl text-secondary font-normal italic flex flex-col items-start max-w-4xl mx-auto">
@@ -202,41 +226,24 @@
             </div>
         </section>
 
-        <section class="py-12 md:py-16 bg-gray-100" aria-labelledby="testimonials-heading">
-            <div class="container mx-auto px-4 md:px-8 max-w-7xl">
-                <div class="flex flex-col md:flex-row gap-8">
-                    <div class="w-full md:w-1/2 bg-primary text-white p-6 md:p-8 rounded-lg relative">
-                        <h2 id="testimonials-heading" class="text-center text-2xl md:text-3xl font-bold mb-6">Client Testimonials</h2>
-                        <div id="testimonialContent" class="mb-4" aria-live="polite">
-                            <!-- Testimonial content will be dynamically inserted here -->
-                        </div>
-                        <div class="absolute bottom-4 right-4 flex space-x-2">
-                            <button id="prevTestimonial" class="bg-white text-primary p-2 rounded-full" aria-label="Previous testimonial">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path  fill-rule="evenodd" d="M12.707 5.293a1 1 0 010 1.414L9.414 10l3.293 3.293a1 1 0 01-1.414 1.414l-4-4a1 1 0 010-1.414l4-4a1 1 0 011.414 0z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                            <button id="nextTestimonial" class="bg-white text-primary p-2 rounded-full" aria-label="Next testimonial">
-                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
-                                    <path fill-rule="evenodd" d="M7.293 14.707a1 1 0 010-1.414L10.586 10 7.293 6.707a1 1 0 011.414-1.414l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414 0z" clip-rule="evenodd" />
-                                </svg>
-                            </button>
-                        </div>
-                    </div>
-                    <div class="w-full md:w-1/2 bg-white p-6 md:p-8 rounded-lg shadow-lg flex flex-col justify-center items-center text-center">
-                        <h2 class="text-2xl md:text-3xl font-bold mb-6 text-primary">Tell us what you need!</h2>
-                        <p class="mb-6 text-gray-600 text-sm md:text-base">
-                            We'll reach out to you with seamless solutions
-                            <br>
-                            and virtual high-fives! Not spam.
-                        </p>
-                        <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg cta-button">
-                            GET IN TOUCH
-                        </a>
-                    </div>
+        <section class="py-12 md:py-16 bg-gray-100">
+            <div class="max-w-4xl mx-auto px-4">
+                <div class="bg-white p-6 md:p-8 rounded-lg shadow-lg text-center">
+                <h2 class="text-2xl md:text-3xl font-bold mb-6 text-primary">Tell us what you need!</h2>
+                <p class="mb-6 text-gray-600 text-sm md:text-base">
+                    We'll reach out to you with seamless solutions
+                    
+                    and virtual high-fives! Not spam.
+                </p>
+                <a href="/contact.html" class="bg-secondary hover:bg-opacity-90 text-white px-6 py-2 md:px-8 md:py-3 rounded-full text-base md:text-lg inline-block transition-all duration-300 hover:shadow-lg cta-button">
+                    GET IN TOUCH
+                </a>
                 </div>
             </div>
         </section>
+
+
+        
     </main>
 
     <footer class="bg-primary text-white py-8 relative">
